@@ -158,7 +158,7 @@ class LogoutView(generics.GenericAPIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class GenerateOTP(generics.CreateAPIView):
+class GenerateOTPView(generics.CreateAPIView):
     queryset = PhoneToken.objects.all()
     serializer_class = PhoneTokenCreateSerializer
     permission_classes = (permissions.AllowAny, )
@@ -190,7 +190,7 @@ class GenerateOTP(generics.CreateAPIView):
                         status=status.HTTP_406_NOT_ACCEPTABLE)
 
 
-class ValidateOTP(generics.CreateAPIView):
+class ValidateOTPView(generics.CreateAPIView):
     queryset = PhoneToken.objects.all()
     serializer_class = PhoneTokenValidateSerializer
     permission_classes = (permissions.AllowAny, )

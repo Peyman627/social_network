@@ -50,6 +50,7 @@ ROOT_URLCONF = 'social_network.urls'
 
 AUTHENTICATION_BACKENDS = (
     'users.backends.EmailPhoneBackend',
+    'users.backends.Phone2FABackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
