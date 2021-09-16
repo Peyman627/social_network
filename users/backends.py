@@ -73,4 +73,4 @@ class Phone2FABackend(ModelBackend):
         phone_token.attempts = F('attempts') + 1
         phone_token.save()
 
-        return user
+        return user if self.user_can_authenticate(user) else None
