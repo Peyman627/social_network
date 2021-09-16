@@ -91,7 +91,7 @@ class PhoneToken(models.Model):
         verbose_name_plural = _("otp tokens")
 
     def __str__(self):
-        return f'{self.phone}, {self.otp}'
+        return f'{self.phone}-{self.otp}'
 
     @classmethod
     def create_otp_for_number(cls, number):
@@ -130,3 +130,26 @@ class PhoneToken(models.Model):
         m.update(os.urandom(16))
         otp = str(int(m.hexdigest(), 16))[-length:]
         return otp
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User,
+                                verbose_name=_('user'),
+                                on_delete=models.CASCADE)
+    name = models.CharField(_('name'), max_length=200, blank=True)
+    picture = models.ImageField(_('picture'),
+                                blank=True,
+                                null=True,
+                                upload_to='users/profiles')
+    bio = models.TextField(_('bio'), blank=True)
+    followers = models.ManyToManyField(User,
+                                       verbose_name=_('followers'),
+                                       related_name='followings')
+
+    def __str__(self):
+        return self.user.username
+
+    class Meta:
+        db_table = 'profile'
+        verbose_name = _('profile')
+        verbose_name_plural = _('profiles')

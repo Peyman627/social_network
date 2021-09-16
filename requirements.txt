@@ -17,6 +17,7 @@ parso==0.8.2
 pexpect==4.8.0
 phonenumbers==8.12.31
 pickleshare==0.7.5
+Pillow==8.3.2
 prompt-toolkit==3.0.20
 ptyprocess==0.7.0
 Pygments==2.10.0
