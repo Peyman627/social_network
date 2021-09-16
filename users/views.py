@@ -1,3 +1,74 @@
-from django.shortcuts import render
+import jwt
 
-# Create your views here.
+from django.contrib.auth import get_user_model
+from django.conf import settings
+from rest_framework import generics, status
+from rest_framework import permissions
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.response import Response
+from rest_framework.reverse import reverse
+
+from .serializers import (RegisterSerializer, EmailVerificationSerializer)
+from .utils import Util
+
+User = get_user_model()
+
+
+class RegisterView(generics.GenericAPIView):
+    serializer_class = RegisterSerializer
+    permission_classes = (permissions.AllowAny, )
+
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        user = User.objects.get(email=serializer.data['email'])
+        token = RefreshToken.for_user(user).access_token
+
+        address = reverse('users:email_verify', request=request)
+        verify_url = f'{address}?token={token}'
+
+        email_body = f'Hi {user.username}. Please use the link below to verify your email\n{verify_url}'
+        email_data = {
+            'subject': 'Verify your email',
+            'body': email_body,
+            'to': user.email
+        }
+
+        Util.send_email(email_data)
+
+        return Response(
+            {
+                'success': 'Successfully created',
+                'detail': 'Verify account using the sent email'
+            },
+            status=status.HTTP_201_CREATED)
+
+
+class EmailVerifyView(generics.GenericAPIView):
+    serializer_class = EmailVerificationSerializer
+    permission_classes = (permissions.AllowAny, )
+
+    def get(self, request):
+        token = request.query_params.get('token')
+        try:
+            payload = jwt.decode(token,
+                                 settings.SECRET_KEY,
+                                 algorithms=['HS256'])
+
+            user = User.objects.get(pk=payload['user_id'])
+            if not user.is_verified:
+                user.is_verified = True
+                user.save()
+
+            return Response({'success': "Successfully activated"},
+                            status=status.HTTP_200_OK)
+
+        except jwt.ExpiredSignatureError:
+            return Response({'error': 'Activation expired'},
+                            status=status.HTTP_400_BAD_REQUEST)
+
+        except jwt.exceptions.DecodeError:
+            return Response({'error': 'Invalid token'},
+                            status=status.HTTP_400_BAD_REQUEST)
