@@ -53,10 +53,10 @@ AUTHENTICATION_BACKENDS = (
 )
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES':
-    ('rest_framework.permissions.IsAuthenticated', ),
-    'DEFAULT_AUTHENTICATION_CLASSES':
-    ('rest_framework_simplejwt.authentication.JWTAuthentication', ),
+    # 'DEFAULT_PERMISSION_CLASSES':
+    # ('rest_framework.permissions.IsAuthenticated', ),
+    # 'DEFAULT_AUTHENTICATION_CLASSES':
+    # ('rest_framework_simplejwt.authentication.JWTAuthentication', ),
 }
 
 SIMPLE_JWT = {
@@ -153,7 +153,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email
 
-EMAIL_USE_TLS = config('DEBUG', cast=bool)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
