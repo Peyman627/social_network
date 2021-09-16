@@ -1,10 +1,16 @@
-from django.db import models
+import datetime
+import hashlib
+import os
 
+from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
-
-from phonenumber_field.modelfields import PhoneNumberField
+from django.conf import settings
+from django.utils.timezone import make_aware
+from rest_framework.exceptions import AuthenticationFailed
 from rest_framework_simplejwt.tokens import RefreshToken
+from phonenumber_field.modelfields import PhoneNumberField
+from kavenegar import KavenegarAPI, APIException, HTTPException
 
 
 class UserManager(BaseUserManager):
@@ -68,3 +74,68 @@ class User(AbstractBaseUser, PermissionsMixin):
         db_table = 'user'
         verbose_name = _('user')
         verbose_name_plural = _('users')
+
+
+class PhoneToken(models.Model):
+    phone = PhoneNumberField(_('phone'), editable=False)
+    otp = models.CharField(_('otp'), max_length=40, editable=False)
+    timestamp = models.DateTimeField(_('timestamp'),
+                                     auto_now_add=True,
+                                     editable=False)
+    attempts = models.IntegerField(_('attempts'), default=0)
+    used = models.BooleanField(_('used'), default=False)
+
+    class Meta:
+        db_table = 'phone_token'
+        verbose_name = _("otp token")
+        verbose_name_plural = _("otp tokens")
+
+    def __str__(self):
+        return f'{self.phone}, {self.otp}'
+
+    @classmethod
+    def create_otp_for_number(cls, number):
+        today_min = datetime.datetime.combine(datetime.date.today(),
+                                              datetime.time.min)
+        today_max = datetime.datetime.combine(datetime.date.today(),
+                                              datetime.time.max)
+
+        otps = cls.objects.filter(phone=number,
+                                  timestamp__range=(make_aware(today_min),
+                                                    make_aware(today_max)))
+
+        if otps.count() <= getattr(settings, 'PHONE_LOGIN_ATTEMPTS', 10):
+            otp = cls.generate_otp(
+                length=getattr(settings, 'PHONE_LOGIN_OTP_LENGTH', 6))
+
+            phone_token = PhoneToken(phone=number, otp=otp)
+            phone_token.save()
+
+            api_key = settings.KAVENEGAR_API_KEY
+            try:
+                api = KavenegarAPI(api_key)
+                params = {
+                    'sender': '10004346',
+                    'receptor': number,
+                    'message': f'Your code: {otp}'
+                }
+                api.sms_send(params)
+                return phone_token
+
+            except APIException as e:
+                raise AuthenticationFailed(e)
+
+            except HTTPException as e:
+                return AuthenticationFailed(e)
+
+        return None
+
+    @classmethod
+    def generate_otp(cls, length=6):
+        hash_algorithm = getattr(settings, 'PHONE_LOGIN_OTP_HASH_ALGORITHM',
+                                 'sha256')
+        m = getattr(hashlib, hash_algorithm)()
+        m.update(getattr(settings, 'SECRET_KEY', None).encode('utf-8'))
+        m.update(os.urandom(16))
+        otp = str(int(m.hexdigest(), 16))[-length:]
+        return otp

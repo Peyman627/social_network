@@ -54,10 +54,10 @@ AUTHENTICATION_BACKENDS = (
 )
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES':
-    ('rest_framework.permissions.IsAuthenticated', ),
-    'DEFAULT_AUTHENTICATION_CLASSES':
-    ('rest_framework_simplejwt.authentication.JWTAuthentication', ),
+    # 'DEFAULT_PERMISSION_CLASSES':
+    # ('rest_framework.permissions.IsAuthenticated', ),
+    # 'DEFAULT_AUTHENTICATION_CLASSES':
+    # ('rest_framework_simplejwt.authentication.JWTAuthentication', ),
 }
 
 SIMPLE_JWT = {
@@ -160,3 +160,8 @@ EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+# 2FA login
+
+PHONE_LOGIN_DEBUG = config('PHONE_LOGIN_DEBUG')
+KAVENEGAR_API_KEY = config('KAVENEGAR_API_KEY')
