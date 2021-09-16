@@ -13,7 +13,7 @@ from rest_framework.reverse import reverse
 
 from .serializers import (RegisterSerializer, EmailVerificationSerializer,
                           LoginSerializer, PasswordResetSerializer,
-                          SetNewPasswordSerializer)
+                          SetNewPasswordSerializer, LogoutSerializer)
 from .utils import Util
 
 User = get_user_model()
@@ -136,3 +136,16 @@ class SetNewPasswordView(generics.GenericAPIView):
 
         return Response({'success': 'Password reset complete'},
                         status=status.HTTP_200_OK)
+
+
+class LogoutView(generics.GenericAPIView):
+    serializer_class = LogoutSerializer
+
+    # permission_classes = (permissions.IsAuthenticated, )
+
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        return Response(status=status.HTTP_204_NO_CONTENT)
