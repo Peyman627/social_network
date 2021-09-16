@@ -47,6 +47,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'social_network.urls'
 
+AUTHENTICATION_BACKENDS = (
+    'users.backends.EmailPhoneBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES':
     ('rest_framework.permissions.IsAuthenticated', ),

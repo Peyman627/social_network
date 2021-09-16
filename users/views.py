@@ -8,7 +8,8 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
 
-from .serializers import (RegisterSerializer, EmailVerificationSerializer)
+from .serializers import (RegisterSerializer, EmailVerificationSerializer,
+                          LoginSerializer)
 from .utils import Util
 
 User = get_user_model()
@@ -72,3 +73,14 @@ class EmailVerifyView(generics.GenericAPIView):
         except jwt.exceptions.DecodeError:
             return Response({'error': 'Invalid token'},
                             status=status.HTTP_400_BAD_REQUEST)
+
+
+class LoginView(generics.GenericAPIView):
+    serializer_class = LoginSerializer
+    permission_classes = (permissions.AllowAny, )
+
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
