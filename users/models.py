@@ -7,10 +7,10 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.conf import settings
 from django.utils.timezone import make_aware
-from rest_framework.exceptions import AuthenticationFailed
 from rest_framework_simplejwt.tokens import RefreshToken
 from phonenumber_field.modelfields import PhoneNumberField
-from kavenegar import KavenegarAPI, APIException, HTTPException
+
+from .utils import Util
 
 
 class UserManager(BaseUserManager):
@@ -111,22 +111,13 @@ class PhoneToken(models.Model):
             phone_token = PhoneToken(phone=number, otp=otp)
             phone_token.save()
 
-            api_key = settings.KAVENEGAR_API_KEY
-            try:
-                api = KavenegarAPI(api_key)
-                params = {
-                    'sender': '10004346',
-                    'receptor': number,
-                    'message': f'Your code: {otp}'
-                }
-                api.sms_send(params)
-                return phone_token
+            sms_data = {
+                'receptor': number,
+                'message': f'Your code for login: {otp}'
+            }
+            Util.send_sms(sms_data)
 
-            except APIException as e:
-                raise AuthenticationFailed(e)
-
-            except HTTPException as e:
-                return AuthenticationFailed(e)
+            return phone_token
 
         return None
 
