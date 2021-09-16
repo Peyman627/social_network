@@ -20,6 +20,6 @@ urlpatterns = [
     path('password-reset-complete/',
          views.SetNewPasswordView.as_view(),
          name='password_reset_complete'),
-    #     path('generate-otp/', views.GenerateOTP.as_view(), name='generate_otp'),
-    #     path('validate-otp/', views.ValidateOTP.as_view(), name='validate_otp'),
+    path('generate-otp/', views.GenerateOTP.as_view(), name='generate_otp'),
+    path('validate-otp/', views.ValidateOTP.as_view(), name='validate_otp'),
 ]

@@ -1,10 +1,12 @@
 import jwt
 
+from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
 from django.conf import settings
 from django.utils.encoding import DjangoUnicodeDecodeError, smart_str
 from django.utils.http import urlsafe_base64_decode
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
+from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import generics, status
 from rest_framework import permissions
 from rest_framework.response import Response
@@ -13,8 +15,11 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 from .serializers import (RegisterSerializer, EmailVerificationSerializer,
                           LoginSerializer, PasswordResetSerializer,
-                          SetNewPasswordSerializer, LogoutSerializer)
+                          SetNewPasswordSerializer, LogoutSerializer,
+                          PhoneTokenCreateSerializer,
+                          PhoneTokenValidateSerializer)
 from .utils import Util
+from .models import PhoneToken
 
 User = get_user_model()
 
@@ -151,3 +156,62 @@ class LogoutView(generics.GenericAPIView):
         serializer.save()
 
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class GenerateOTP(generics.CreateAPIView):
+    queryset = PhoneToken.objects.all()
+    serializer_class = PhoneTokenCreateSerializer
+    permission_classes = (permissions.AllowAny, )
+
+    def post(self, request, format=None):
+        serializer = self.serializer_class(data=request.data,
+                                           context={'request': request})
+        if serializer.is_valid():
+            token = PhoneToken.create_otp_for_number(
+                number=request.data.get('phone'))
+
+            if token:
+                phone_token = self.serializer_class(
+                    token, context={'request': request})
+                data = phone_token.data
+
+                if getattr(settings, 'PHONE_LOGIN_DEBUG', False):
+                    data['debug_mode_token'] = token.otp
+
+                return Response(data)
+            return Response(
+                {
+                    'reason':
+                    "you can not have more than {n} attempts per day, please try again tomorrow"
+                    .format(n=getattr(settings, 'PHONE_LOGIN_ATTEMPTS', 10))
+                },
+                status=status.HTTP_403_FORBIDDEN)
+        return Response({'reason': serializer.errors},
+                        status=status.HTTP_406_NOT_ACCEPTABLE)
+
+
+class ValidateOTP(generics.CreateAPIView):
+    queryset = PhoneToken.objects.all()
+    serializer_class = PhoneTokenValidateSerializer
+    permission_classes = (permissions.AllowAny, )
+
+    def post(self, request, format=None):
+        serializer = self.serializer_class(data=request.data,
+                                           context={'request': request})
+        if serializer.is_valid():
+            pk = request.data.get("pk")
+            otp = request.data.get("otp")
+            try:
+                user = authenticate(request, pk=pk, otp=otp)
+                user_data = {
+                    'username': user.username,
+                    'tokens': user.tokens()
+                }
+                return Response(user_data, status=status.HTTP_200_OK)
+
+            except ObjectDoesNotExist:
+                return Response({'reason': "OTP doesn't exist"},
+                                status=status.HTTP_406_NOT_ACCEPTABLE)
+
+        return Response({'reason': serializer.errors},
+                        status=status.HTTP_406_NOT_ACCEPTABLE)

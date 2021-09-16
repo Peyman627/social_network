@@ -10,6 +10,7 @@ from rest_framework.reverse import reverse
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 
 from .utils import Util
+from .models import PhoneToken
 
 User = get_user_model()
 
@@ -178,3 +179,17 @@ class LogoutSerializer(serializers.Serializer):
             RefreshToken(self.token).blacklist()
         except TokenError:
             self.fail('bad token')
+
+
+class PhoneTokenCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PhoneToken
+        fields = ['pk', 'phone']
+
+
+class PhoneTokenValidateSerializer(serializers.ModelSerializer):
+    otp = serializers.CharField(max_length=40)
+
+    class Meta:
+        model = PhoneToken
+        fields = ['pk', 'otp']
