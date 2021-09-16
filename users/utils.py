@@ -28,7 +28,8 @@ class Util:
             api.sms_send(params)
 
         except APIException:
-            raise RestAPIException('There was a problem!')
+            raise RestAPIException(
+                'Service temporarily unavailable, try again later.', code=503)
 
         except HTTPException:
-            raise RestAPIException('Try again, an error occured')
+            raise RestAPIException('Try again, an error occured', code=400)
