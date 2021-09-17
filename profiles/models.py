@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
+from django.db.models.signals import post_save
 
 User = get_user_model()
 
@@ -26,3 +27,11 @@ class Profile(models.Model):
         db_table = 'profile'
         verbose_name = _('profile')
         verbose_name_plural = _('profiles')
+
+
+def user_did_save(sender, instance, created, *args, **kwargs):
+    if created:
+        Profile.objects.get_or_create(user=instance)
+
+
+post_save.connect(user_did_save, sender=User)

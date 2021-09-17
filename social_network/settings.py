@@ -29,8 +29,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Internal apps
     'users.apps.UsersConfig',
     'posts.apps.PostsConfig',
+    'profiles.apps.ProfilesConfig',
+    # Third-party apps
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
