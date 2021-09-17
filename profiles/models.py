@@ -14,11 +14,13 @@ class Profile(models.Model):
     picture = models.ImageField(_('picture'),
                                 blank=True,
                                 null=True,
-                                upload_to='users/profiles')
+                                upload_to='profiles/pictures')
     bio = models.TextField(_('bio'), blank=True)
     followers = models.ManyToManyField(User,
                                        verbose_name=_('followers'),
                                        related_name='followings')
+    created_time = models.DateTimeField(auto_now_add=True)
+    updated_time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.user.username
