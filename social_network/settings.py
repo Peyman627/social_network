@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'posts.apps.PostsConfig',
     'profiles.apps.ProfilesConfig',
+    'articles.apps.ArticlesConfig',
     # Third-party apps
     'rest_framework',
     'rest_framework_simplejwt',
