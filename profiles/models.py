@@ -19,8 +19,8 @@ class Profile(models.Model):
     followers = models.ManyToManyField(User,
                                        verbose_name=_('followers'),
                                        related_name='followings')
-    created_time = models.DateTimeField(auto_now_add=True)
-    updated_time = models.DateTimeField(auto_now=True)
+    created_time = models.DateTimeField(_('created time'), auto_now_add=True)
+    updated_time = models.DateTimeField(_('updated time'), auto_now=True)
 
     def __str__(self):
         return self.user.username
