@@ -15,7 +15,12 @@ class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
     lookup_url_kwarg = 'post_id'
 
 
-class PostLikeListView(generics.ListCreateAPIView):
+class PostLikeCreateView(generics.CreateAPIView):
+    queryset = PostLike.objects.all()
+    serializer_class = PostLikeSerializer
+
+
+class PostLikeListView(generics.ListAPIView):
     queryset = PostLike.objects.all()
     serializer_class = PostLikeSerializer
 
@@ -24,7 +29,7 @@ class PostLikeListView(generics.ListCreateAPIView):
         return PostLike.objects.filter(post=post_id)
 
 
-class PostLikeDetailView(generics.RetrieveUpdateDestroyAPIView):
+class PostLikeDetailView(generics.RetrieveDestroyAPIView):
     queryset = PostLike.objects.all()
     serializer_class = PostLikeSerializer
 
