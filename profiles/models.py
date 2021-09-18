@@ -6,6 +6,25 @@ from django.db.models.signals import post_save
 User = get_user_model()
 
 
+class FollowerRelation(models.Model):
+    user = models.ForeignKey(User,
+                             verbose_name=_('user'),
+                             on_delete=models.CASCADE)
+    profile = models.ForeignKey('Profile',
+                                verbose_name=_('profile'),
+                                on_delete=models.CASCADE)
+    created_time = models.DateTimeField(_('created time'), auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.user.username} - {self.profile.user.username}'
+
+    class Meta:
+        db_table = 'follower_relation'
+        verbose_name = _('follower relation')
+        verbose_name_plural = _('follower relations')
+        unique_together = ('user', 'profile')
+
+
 class Profile(models.Model):
     user = models.OneToOneField(User,
                                 verbose_name=_('user'),
@@ -18,7 +37,9 @@ class Profile(models.Model):
     bio = models.TextField(_('bio'), blank=True)
     followers = models.ManyToManyField(User,
                                        verbose_name=_('followers'),
-                                       related_name='followings')
+                                       blank=True,
+                                       related_name='followings',
+                                       through=FollowerRelation)
     created_time = models.DateTimeField(_('created time'), auto_now_add=True)
     updated_time = models.DateTimeField(_('updated time'), auto_now=True)
 

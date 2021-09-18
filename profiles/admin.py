@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Profile
+from .models import Profile, FollowerRelation
 
 
 @admin.register(Profile)
@@ -12,3 +12,6 @@ class ProfileAdmin(admin.ModelAdmin):
     @admin.display
     def username(self, obj):
         return obj.user.username
+
+
+admin.site.register(FollowerRelation)
