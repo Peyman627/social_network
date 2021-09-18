@@ -26,6 +26,7 @@ class PostLike(models.Model):
 class Post(models.Model):
     parent = models.ForeignKey('self',
                                verbose_name=_('parent'),
+                               blank=True,
                                null=True,
                                on_delete=models.SET_NULL)
     user = models.ForeignKey(User,
