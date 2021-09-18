@@ -24,9 +24,10 @@ class PostLikeHyperlinkedRelatedField(serializers.HyperlinkedRelatedField):
 
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name='posts:post_detail',
-                                               lookup_url_kwarg='post_id',
-                                               read_only=True)
+    url = serializers.HyperlinkedIdentityField(
+        view_name='posts:post_detail',
+        lookup_url_kwarg='post_id',
+    )
     parent = serializers.HyperlinkedRelatedField(view_name='posts:post_detail',
                                                  lookup_url_kwarg='post_id',
                                                  read_only=True)
