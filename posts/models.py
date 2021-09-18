@@ -21,6 +21,7 @@ class PostLike(models.Model):
         db_table = 'post_like'
         verbose_name = _('post like')
         verbose_name_plural = _('post likes')
+        unique_together = ('user', 'post')
 
 
 class Post(models.Model):
