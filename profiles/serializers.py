@@ -7,10 +7,31 @@ from .models import Profile, FollowRelation
 User = get_user_model()
 
 
-class FollowRelationHyperlinkedRelatedField(serializers.HyperlinkedRelatedField
-                                            ):
+class FollowerRelationHyperlinkedRelatedField(
+        serializers.HyperlinkedRelatedField):
+    view_name = 'profiles:follower_relation_detail'
+
     def get_url(self, obj, view_name, request, format):
         url_kwargs = {'profile_id': obj.profile.id, 'follow_id': obj.id}
+        return reverse(view_name,
+                       kwargs=url_kwargs,
+                       request=request,
+                       format=format)
+
+    def get_object(self, view_name, view_args, view_kwargs):
+        lookup_kwargs = {
+            'profile': view_kwargs['profile_id'],
+            'id': view_kwargs['follow_id']
+        }
+        return self.get_queryset().get(**lookup_kwargs)
+
+
+class FollowingRelationHyperlinkedRelatedField(
+        serializers.HyperlinkedRelatedField):
+    view_name = 'profiles:following_relation_detail'
+
+    def get_url(self, obj, view_name, request, format):
+        url_kwargs = {'profile_id': obj.user.profile.id, 'follow_id': obj.id}
         return reverse(view_name,
                        kwargs=url_kwargs,
                        request=request,
@@ -90,11 +111,20 @@ class ProfileSerializer(serializers.ModelSerializer):
         return instance
 
 
+class FollowRelationSerializer(serializers.ModelSerializer):
+    user = UserHyperlinkedRelatedField(queryset=User.objects.all())
+    profile = serializers.HyperlinkedRelatedField(
+        view_name='profiles:profile_detail',
+        lookup_url_kwarg='profile_id',
+        queryset=Profile.objects.all())
+
+    class Meta:
+        model = FollowRelation
+        fields = ['user', 'profile']
+
+
 class FollowerRelationSerializer(serializers.HyperlinkedModelSerializer):
-    url = FollowRelationHyperlinkedRelatedField(
-        view_name='profiles:follower_relation_detail',
-        source='*',
-        read_only=True)
+    url = FollowerRelationHyperlinkedRelatedField(source='*', read_only=True)
     user = UserHyperlinkedRelatedField(read_only=True)
     profile = serializers.HyperlinkedRelatedField(
         view_name='profiles:profile_detail',
@@ -107,10 +137,7 @@ class FollowerRelationSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class FollowingRelationSerializer(serializers.HyperlinkedModelSerializer):
-    url = FollowRelationHyperlinkedRelatedField(
-        view_name='profiles:following_relation_detail',
-        source='*',
-        read_only=True)
+    url = FollowingRelationHyperlinkedRelatedField(source='*', read_only=True)
     user = UserHyperlinkedRelatedField(read_only=True)
     profile = serializers.HyperlinkedRelatedField(
         view_name='profiles:profile_detail',

@@ -2,7 +2,8 @@ from rest_framework import generics
 from django.contrib.auth import get_user_model
 
 from .models import Profile, FollowRelation
-from .serializers import (ProfileSerializer, FollowerRelationSerializer,
+from .serializers import (ProfileSerializer, FollowRelationSerializer,
+                          FollowerRelationSerializer,
                           FollowingRelationSerializer)
 
 User = get_user_model()
@@ -14,7 +15,12 @@ class ProfileDetailView(generics.RetrieveUpdateDestroyAPIView):
     lookup_url_kwarg = 'profile_id'
 
 
-class FollowerRelationListView(generics.ListCreateAPIView):
+class FollowRelationCreateView(generics.CreateAPIView):
+    queryset = FollowRelation.objects.all()
+    serializer_class = FollowRelationSerializer
+
+
+class FollowerRelationListView(generics.ListAPIView):
     queryset = FollowRelation.objects.all()
     serializer_class = FollowerRelationSerializer
 
@@ -23,7 +29,7 @@ class FollowerRelationListView(generics.ListCreateAPIView):
         return FollowRelation.objects.filter(profile=profile_id)
 
 
-class FollowerRelationDetailView(generics.RetrieveUpdateDestroyAPIView):
+class FollowerRelationDetailView(generics.RetrieveDestroyAPIView):
     queryset = FollowRelation.objects.all()
     serializer_class = FollowerRelationSerializer
 
@@ -33,7 +39,7 @@ class FollowerRelationDetailView(generics.RetrieveUpdateDestroyAPIView):
         return FollowRelation.objects.get(id=follow_id, profile=profile_id)
 
 
-class FollowingRelationListView(generics.ListCreateAPIView):
+class FollowingRelationListView(generics.ListAPIView):
     queryset = FollowRelation.objects.all()
     serializer_class = FollowingRelationSerializer
 
@@ -44,7 +50,7 @@ class FollowingRelationListView(generics.ListCreateAPIView):
         return FollowRelation.objects.filter(user=user_id)
 
 
-class FollowingRelationDetailView(generics.RetrieveUpdateDestroyAPIView):
+class FollowingRelationDetailView(generics.RetrieveDestroyAPIView):
     queryset = FollowRelation.objects.all()
     serializer_class = FollowingRelationSerializer
 
