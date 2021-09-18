@@ -2,13 +2,13 @@ from rest_framework import serializers
 from rest_framework.reverse import reverse
 from django.contrib.auth import get_user_model
 
-from .models import Profile, FollowerRelation
+from .models import Profile, FollowRelation
 
 User = get_user_model()
 
 
-class FollowerRelationHyperlinkedRelatedField(
-        serializers.HyperlinkedRelatedField):
+class FollowRelationHyperlinkedRelatedField(serializers.HyperlinkedRelatedField
+                                            ):
     view_name = 'posts:follower_relation_detail'
 
     def get_url(self, obj, view_name, request, format):
@@ -51,7 +51,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = [
             'user', 'name', 'bio', 'followers_count', 'followings_count',
-            'followers', 'created_time', 'updated_time'
+            'created_time', 'updated_time'
         ]
 
     def get_followers_count(self, obj):
@@ -74,7 +74,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         return instance
 
 
-class FollowerRelationSerializer(serializers.ModelSerializer):
+class FollowRelationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = FollowerRelation
+        model = FollowRelation
         fields = ['id', 'user', 'profile', 'created_time']

@@ -6,7 +6,7 @@ from django.db.models.signals import post_save
 User = get_user_model()
 
 
-class FollowerRelation(models.Model):
+class FollowRelation(models.Model):
     user = models.ForeignKey(User,
                              verbose_name=_('user'),
                              on_delete=models.CASCADE)
@@ -19,9 +19,9 @@ class FollowerRelation(models.Model):
         return f'{self.user.username} - {self.profile.user.username}'
 
     class Meta:
-        db_table = 'follower_relation'
-        verbose_name = _('follower relation')
-        verbose_name_plural = _('follower relations')
+        db_table = 'follow_relation'
+        verbose_name = _('follow relation')
+        verbose_name_plural = _('follow relations')
         unique_together = ('user', 'profile')
 
 
@@ -39,7 +39,7 @@ class Profile(models.Model):
                                        verbose_name=_('followers'),
                                        blank=True,
                                        related_name='followings',
-                                       through=FollowerRelation)
+                                       through=FollowRelation)
     created_time = models.DateTimeField(_('created time'), auto_now_add=True)
     updated_time = models.DateTimeField(_('updated time'), auto_now=True)
 
