@@ -2,7 +2,8 @@ from rest_framework import generics
 from django.contrib.auth import get_user_model
 
 from .models import Profile, FollowRelation
-from .serializers import ProfileSerializer, FollowRelationSerializer
+from .serializers import (ProfileSerializer, FollowerRelationSerializer,
+                          FollowingRelationSerializer)
 
 User = get_user_model()
 
@@ -15,7 +16,7 @@ class ProfileDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 class FollowerRelationListView(generics.ListCreateAPIView):
     queryset = FollowRelation.objects.all()
-    serializer_class = FollowRelationSerializer
+    serializer_class = FollowerRelationSerializer
 
     def get_queryset(self):
         profile_id = self.kwargs.get('profile_id')
@@ -24,7 +25,7 @@ class FollowerRelationListView(generics.ListCreateAPIView):
 
 class FollowerRelationDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = FollowRelation.objects.all()
-    serializer_class = FollowRelationSerializer
+    serializer_class = FollowerRelationSerializer
 
     def get_object(self):
         profile_id = self.kwargs.get('profile_id')
@@ -34,7 +35,7 @@ class FollowerRelationDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 class FollowingRelationListView(generics.ListCreateAPIView):
     queryset = FollowRelation.objects.all()
-    serializer_class = FollowRelationSerializer
+    serializer_class = FollowingRelationSerializer
 
     def get_queryset(self):
         profile_id = self.kwargs.get('profile_id')
@@ -45,7 +46,7 @@ class FollowingRelationListView(generics.ListCreateAPIView):
 
 class FollowingRelationDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = FollowRelation.objects.all()
-    serializer_class = FollowRelationSerializer
+    serializer_class = FollowingRelationSerializer
 
     def get_object(self):
         profile_id = self.kwargs.get('profile_id')
