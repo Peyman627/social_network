@@ -22,7 +22,7 @@ class PostLikeHyperlinkedRelatedField(serializers.HyperlinkedRelatedField):
         return self.get_queryset().get(**lookup_kwargs)
 
 
-class PostSerializer(serializers.ModelSerializer):
+class PostSerializer(serializers.HyperlinkedModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name='posts:post_detail',
                                                lookup_url_kwarg='post_id',
                                                read_only=True)
@@ -30,6 +30,10 @@ class PostSerializer(serializers.ModelSerializer):
                                                  lookup_url_kwarg='post_id',
                                                  read_only=True)
     likes_count = serializers.SerializerMethodField(read_only=True)
+    user = serializers.HyperlinkedRelatedField(
+        view_name='profiles:profile_detail',
+        lookup_url_kwarg='profile_id',
+        read_only=True)
 
     class Meta:
         model = Post
@@ -42,8 +46,12 @@ class PostSerializer(serializers.ModelSerializer):
         return obj.likes.count()
 
 
-class PostLikeSerializer(serializers.ModelSerializer):
+class PostLikeSerializer(serializers.HyperlinkedModelSerializer):
     url = PostLikeHyperlinkedRelatedField(source='*', read_only=True)
+    user = serializers.HyperlinkedRelatedField(
+        view_name='profiles:profile_detail',
+        lookup_url_kwarg='profile_id',
+        read_only=True)
     post = serializers.HyperlinkedRelatedField(view_name='posts:post_detail',
                                                lookup_url_kwarg='post_id',
                                                read_only=True)
