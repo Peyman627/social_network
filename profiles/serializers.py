@@ -1,9 +1,29 @@
 from rest_framework import serializers
+from rest_framework.reverse import reverse
 from django.contrib.auth import get_user_model
 
-from .models import Profile
+from .models import Profile, FollowerRelation
 
 User = get_user_model()
+
+
+class FollowerRelationHyperlinkedRelatedField(
+        serializers.HyperlinkedRelatedField):
+    view_name = 'posts:follower_relation_detail'
+
+    def get_url(self, obj, view_name, request, format):
+        url_kwargs = {'profile_id': obj.profile.id, 'follow_id': obj.id}
+        return reverse(view_name,
+                       kwargs=url_kwargs,
+                       request=request,
+                       format=format)
+
+    def get_object(self, view_name, view_args, view_kwargs):
+        lookup_kwargs = {
+            'profile': view_kwargs['profile_id'],
+            'id': view_kwargs['follow_id']
+        }
+        return self.get_queryset().get(**lookup_kwargs)
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -52,3 +72,9 @@ class ProfileSerializer(serializers.ModelSerializer):
         user.save()
 
         return instance
+
+
+class FollowerRelationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FollowerRelation
+        fields = ['id', 'user', 'profile', 'created_time']

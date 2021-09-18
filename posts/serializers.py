@@ -46,7 +46,7 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
         return obj.likes.count()
 
 
-class PostLikeSerializer(serializers.HyperlinkedModelSerializer):
+class PostLikeSerializer(serializers.ModelSerializer):
     url = PostLikeHyperlinkedRelatedField(source='*', read_only=True)
     user = serializers.HyperlinkedRelatedField(
         view_name='profiles:profile_detail',
