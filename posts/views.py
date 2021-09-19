@@ -20,6 +20,9 @@ class PostListView(generics.ListCreateAPIView):
         return Post.objects.all().by_username(username).order_by(
             '-created_time')
 
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
 
 class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
