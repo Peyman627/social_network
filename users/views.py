@@ -26,7 +26,7 @@ User = get_user_model()
 
 class RegisterView(generics.GenericAPIView):
     serializer_class = RegisterSerializer
-    permission_classes = (permissions.AllowAny, )
+    permission_classes = [permissions.AllowAny]
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
@@ -58,7 +58,7 @@ class RegisterView(generics.GenericAPIView):
 
 class EmailVerifyView(generics.GenericAPIView):
     serializer_class = EmailVerificationSerializer
-    permission_classes = (permissions.AllowAny, )
+    permission_classes = [permissions.AllowAny]
 
     def get(self, request):
         token = request.query_params.get('token')
@@ -86,7 +86,7 @@ class EmailVerifyView(generics.GenericAPIView):
 
 class LoginView(generics.GenericAPIView):
     serializer_class = LoginSerializer
-    permission_classes = (permissions.AllowAny, )
+    permission_classes = [permissions.AllowAny]
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
@@ -97,7 +97,7 @@ class LoginView(generics.GenericAPIView):
 
 class PasswordResetView(generics.GenericAPIView):
     serializer_class = PasswordResetSerializer
-    permission_classes = (permissions.AllowAny, )
+    permission_classes = [permissions.AllowAny]
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data,
@@ -109,7 +109,7 @@ class PasswordResetView(generics.GenericAPIView):
 
 
 class PasswordTokenCheckView(generics.GenericAPIView):
-    permission_classes = (permissions.AllowAny, )
+    permission_classes = [permissions.AllowAny]
 
     def get(self, request, uidb64, token):
         try:
@@ -137,7 +137,7 @@ class PasswordTokenCheckView(generics.GenericAPIView):
 
 class SetNewPasswordView(generics.GenericAPIView):
     serializer_class = SetNewPasswordSerializer
-    permission_classes = (permissions.AllowAny, )
+    permission_classes = [permissions.AllowAny]
 
     def patch(self, request):
         serializer = self.serializer_class(data=request.data)
@@ -149,6 +149,7 @@ class SetNewPasswordView(generics.GenericAPIView):
 
 class LogoutView(generics.GenericAPIView):
     serializer_class = LogoutSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
@@ -161,7 +162,7 @@ class LogoutView(generics.GenericAPIView):
 class GenerateOTPView(generics.CreateAPIView):
     queryset = PhoneToken.objects.all()
     serializer_class = PhoneTokenCreateSerializer
-    permission_classes = (permissions.AllowAny, )
+    permission_classes = [permissions.AllowAny]
 
     def post(self, request, format=None):
         serializer = self.serializer_class(data=request.data,
@@ -193,7 +194,7 @@ class GenerateOTPView(generics.CreateAPIView):
 class ValidateOTPView(generics.CreateAPIView):
     queryset = PhoneToken.objects.all()
     serializer_class = PhoneTokenValidateSerializer
-    permission_classes = (permissions.AllowAny, )
+    permission_classes = [permissions.AllowAny]
 
     def post(self, request, format=None):
         serializer = self.serializer_class(data=request.data,
