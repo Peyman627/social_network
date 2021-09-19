@@ -27,6 +27,12 @@ class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
     lookup_url_kwarg = 'post_id'
 
 
+class PostListDiscoverView(generics.ListAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = [IsAuthenticated]
+
+
 class PostFeedView(generics.ListAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
