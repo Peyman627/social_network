@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from rest_framework.reverse import reverse
 
 from .models import Post, PostLike
 from .serializer_fields import PostLikeHyperlinkedRelatedField
@@ -15,17 +14,22 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
                                                  lookup_url_kwarg='post_id',
                                                  read_only=True)
     likes_count = serializers.SerializerMethodField(read_only=True)
+    liked_status = serializers.SerializerMethodField(read_only=True)
     user = UserHyperlinkedRelatedField(read_only=True)
 
     class Meta:
         model = Post
         fields = [
-            'url', 'parent', 'user', 'likes_count', 'content', 'image',
-            'created_time'
+            'url', 'parent', 'user', 'likes_count', 'liked_status', 'content',
+            'image', 'created_time'
         ]
 
     def get_likes_count(self, obj):
         return obj.likes.count()
+
+    def get_liked_status(self, obj):
+        user = self.context.get('request').user
+        return user in obj.likes.all()
 
 
 class PostLikeSerializer(serializers.ModelSerializer):
