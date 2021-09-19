@@ -62,7 +62,7 @@ class PostLikeView(APIView):
             'is_liked': is_liked,
             'created': created
         },
-                        status=status.HTTP_200_OK)
+                        status=status.HTTP_201_CREATED)
 
 
 class PostLikeListView(generics.ListAPIView):
@@ -83,5 +83,4 @@ class PostLikeDetailView(generics.RetrieveDestroyAPIView):
     def get_object(self):
         post_id = self.kwargs.get('post_id')
         like_id = self.kwargs.get('like_id')
-        return PostLike.objects.get(id=like_id,
-                                    post=post_id).order_by('-created_time')
+        return PostLike.objects.get(id=like_id, post=post_id)
