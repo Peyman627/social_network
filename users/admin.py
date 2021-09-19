@@ -8,6 +8,7 @@ from django.contrib.auth import get_user_model
 
 from .models import PhoneToken
 from profiles.admin import FollowRelationInline
+from posts.admin import PostLikeInline
 
 User = get_user_model()
 
@@ -83,7 +84,7 @@ class UserAdmin(BaseUserAdmin):
     }), )
     search_fields = ('email', )
     ordering = ('email', )
-    inlines = (FollowRelationInline, )
+    inlines = (FollowRelationInline, PostLikeInline)
     actions = (make_users_not_active, make_users_verified)
 
 
