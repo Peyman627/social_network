@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
@@ -8,17 +9,27 @@ from rest_framework import status
 from .models import Profile, FollowRelation
 from .serializers import (ProfileSerializer, FollowerRelationSerializer,
                           FollowingRelationSerializer)
+from .permissions import IsOwnerOrReadOnly
 
 User = get_user_model()
+
+
+class ProfileListView(generics.ListAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class ProfileDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
     lookup_url_kwarg = 'profile_id'
 
 
 class ProfileFollowView(APIView):
+    permission_classes = [IsAuthenticated]
+
     def post(self, request, profile_id):
         profile = get_object_or_404(Profile, id=profile_id)
         user = request.user
@@ -35,6 +46,7 @@ class ProfileFollowView(APIView):
 class FollowerRelationListView(generics.ListAPIView):
     queryset = FollowRelation.objects.all()
     serializer_class = FollowerRelationSerializer
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         profile_id = self.kwargs.get('profile_id')
@@ -44,6 +56,7 @@ class FollowerRelationListView(generics.ListAPIView):
 class FollowerRelationDetailView(generics.RetrieveDestroyAPIView):
     queryset = FollowRelation.objects.all()
     serializer_class = FollowerRelationSerializer
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
 
     def get_object(self):
         profile_id = self.kwargs.get('profile_id')
@@ -54,6 +67,7 @@ class FollowerRelationDetailView(generics.RetrieveDestroyAPIView):
 class FollowingRelationListView(generics.ListAPIView):
     queryset = FollowRelation.objects.all()
     serializer_class = FollowingRelationSerializer
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         profile_id = self.kwargs.get('profile_id')
@@ -65,6 +79,7 @@ class FollowingRelationListView(generics.ListAPIView):
 class FollowingRelationDetailView(generics.RetrieveDestroyAPIView):
     queryset = FollowRelation.objects.all()
     serializer_class = FollowingRelationSerializer
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
 
     def get_object(self):
         profile_id = self.kwargs.get('profile_id')
