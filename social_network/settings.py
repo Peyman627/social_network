@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'posts.apps.PostsConfig',
     'profiles.apps.ProfilesConfig',
     'articles.apps.ArticlesConfig',
-    'messages.apps.MessagesConfig',
 
     # Third-party apps
     'rest_framework',
