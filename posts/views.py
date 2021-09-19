@@ -17,7 +17,8 @@ class PostListView(generics.ListCreateAPIView):
 
     def get_queryset(self):
         username = self.request.user.username
-        return Post.objects.all().by_username(username)
+        return Post.objects.all().by_username(username).order_by(
+            '-created_time')
 
 
 class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -32,6 +33,9 @@ class PostListDiscoverView(generics.ListAPIView):
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
 
+    def get_queryset(self):
+        return Post.objects.all().order_by('-created_time')
+
 
 class PostFeedView(generics.ListAPIView):
     queryset = Post.objects.all()
@@ -40,7 +44,7 @@ class PostFeedView(generics.ListAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        return Post.objects.feed(user)
+        return Post.objects.feed(user).order_by('-created_time')
 
 
 class PostLikeView(APIView):
@@ -65,7 +69,7 @@ class PostLikeListView(generics.ListAPIView):
 
     def get_queryset(self):
         post_id = self.kwargs.get('post_id')
-        return PostLike.objects.filter(post=post_id)
+        return PostLike.objects.filter(post=post_id).order_by('-created_time')
 
 
 class PostLikeDetailView(generics.RetrieveDestroyAPIView):
@@ -76,4 +80,5 @@ class PostLikeDetailView(generics.RetrieveDestroyAPIView):
     def get_object(self):
         post_id = self.kwargs.get('post_id')
         like_id = self.kwargs.get('like_id')
-        return PostLike.objects.get(id=like_id, post=post_id)
+        return PostLike.objects.get(id=like_id,
+                                    post=post_id).order_by('-created_time')
