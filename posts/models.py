@@ -1,8 +1,27 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.db.models import Q
 from django.utils.translation import gettext_lazy as _
 
 User = get_user_model()
+
+
+class PostQuerySet(models.QuerySet):
+    def by_username(self, username):
+        return self.filter(user__username__iexact=username)
+
+    def feed(self, user):
+        following_users_id = user.followings.values_list('user__id', flat=True)
+        return self.filter(Q(user__id__in=following_users_id)
+                           | Q(user=user)).distinct().order_by('-created_time')
+
+
+class PostManager(models.Manager):
+    def get_queryset(self, *args, **kwargs):
+        return PostQuerySet(self.model, using=self._db)
+
+    def feed(self, user):
+        return self.get_queryset().feed(user)
 
 
 class PostLike(models.Model):
@@ -45,6 +64,8 @@ class Post(models.Model):
                               blank=True,
                               null=True)
     created_time = models.DateTimeField(_('created time'), auto_now_add=True)
+
+    objects = PostManager()
 
     def __str__(self):
         return self.content

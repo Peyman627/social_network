@@ -5,6 +5,7 @@ from . import views
 app_name = 'posts'
 urlpatterns = [
     path('', views.PostListView.as_view(), name='post_list'),
+    path('feed/', views.PostFeedView.as_view(), name='post_feed'),
     path('<int:post_id>/', views.PostDetailView.as_view(), name='post_detail'),
     path('<int:post_id>/like/', views.PostLikeView.as_view(),
          name='post_like'),

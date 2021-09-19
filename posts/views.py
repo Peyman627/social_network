@@ -15,12 +15,26 @@ class PostListView(generics.ListCreateAPIView):
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
 
+    def get_queryset(self):
+        username = self.request.user.username
+        return Post.objects.all().by_username(username)
+
 
 class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
     lookup_url_kwarg = 'post_id'
+
+
+class PostFeedView(generics.ListAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user
+        return Post.objects.feed(user)
 
 
 class PostLikeView(APIView):
