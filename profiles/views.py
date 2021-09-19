@@ -19,6 +19,9 @@ class ProfileListView(generics.ListAPIView):
     serializer_class = ProfileSerializer
     permission_classes = [IsAuthenticated]
 
+    def get_queryset(self):
+        return Profile.objects.all().order_by('-created_time')
+
 
 class ProfileDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Profile.objects.all()
@@ -50,7 +53,8 @@ class FollowerRelationListView(generics.ListAPIView):
 
     def get_queryset(self):
         profile_id = self.kwargs.get('profile_id')
-        return FollowRelation.objects.filter(profile=profile_id)
+        return FollowRelation.objects.filter(
+            profile=profile_id).order_by('-created_time')
 
 
 class FollowerRelationDetailView(generics.RetrieveDestroyAPIView):
@@ -73,7 +77,8 @@ class FollowingRelationListView(generics.ListAPIView):
         profile_id = self.kwargs.get('profile_id')
         profile = Profile.objects.get(id=profile_id)
         user_id = profile.user.id
-        return FollowRelation.objects.filter(user=user_id)
+        return FollowRelation.objects.filter(
+            user=user_id).order_by('-created_time')
 
 
 class FollowingRelationDetailView(generics.RetrieveDestroyAPIView):
