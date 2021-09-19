@@ -1,9 +1,12 @@
-from rest_framework import generics
 from django.contrib.auth import get_user_model
+from django.shortcuts import get_object_or_404
+from rest_framework import generics
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework import status
 
 from .models import Profile, FollowRelation
-from .serializers import (ProfileSerializer, FollowRelationSerializer,
-                          FollowerRelationSerializer,
+from .serializers import (ProfileSerializer, FollowerRelationSerializer,
                           FollowingRelationSerializer)
 
 User = get_user_model()
@@ -15,9 +18,18 @@ class ProfileDetailView(generics.RetrieveUpdateDestroyAPIView):
     lookup_url_kwarg = 'profile_id'
 
 
-class FollowRelationCreateView(generics.CreateAPIView):
-    queryset = FollowRelation.objects.all()
-    serializer_class = FollowRelationSerializer
+class ProfileFollowView(APIView):
+    def post(self, request, profile_id):
+        profile = get_object_or_404(Profile, id=profile_id)
+        user = request.user
+        follow, created = FollowRelation.objects.get_or_create(user=user,
+                                                               profile=profile)
+        is_following = user in profile.followers.all()
+        return Response({
+            'is_following': is_following,
+            'created': created
+        },
+                        status=status.HTTP_200_OK)
 
 
 class FollowerRelationListView(generics.ListAPIView):

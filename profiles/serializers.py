@@ -30,12 +30,13 @@ class ProfileSerializer(serializers.ModelSerializer):
     user = UserSerializer()
     followers_count = serializers.SerializerMethodField(read_only=True)
     followings_count = serializers.SerializerMethodField(read_only=True)
+    following_status = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = Profile
         fields = [
             'user', 'name', 'bio', 'followers_count', 'followings_count',
-            'created_time', 'updated_time'
+            'following_status', 'created_time', 'updated_time'
         ]
 
     def get_followers_count(self, obj):
@@ -43,6 +44,10 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     def get_followings_count(self, obj):
         return obj.user.followings.count()
+
+    def get_following_status(self, obj):
+        user = self.context.get('request').user
+        return user in obj.followers.all()
 
     def update(self, instance, validated_data):
         user_data = validated_data.pop('user')
@@ -56,18 +61,6 @@ class ProfileSerializer(serializers.ModelSerializer):
         user.save()
 
         return instance
-
-
-class FollowRelationSerializer(serializers.ModelSerializer):
-    user = UserHyperlinkedRelatedField(queryset=User.objects.all())
-    profile = serializers.HyperlinkedRelatedField(
-        view_name='profiles:profile_detail',
-        lookup_url_kwarg='profile_id',
-        queryset=Profile.objects.all())
-
-    class Meta:
-        model = FollowRelation
-        fields = ['user', 'profile']
 
 
 class FollowerRelationSerializer(serializers.HyperlinkedModelSerializer):
