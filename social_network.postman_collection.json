@@ -6,57 +6,22 @@
 	},
 	"item": [
 		{
-			"name": "users:register",
-			"event": [
+			"name": "users",
+			"item": [
 				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
+					"name": "users:register",
+					"event": [
 						{
-							"key": "email",
-							"value": "hassani.peyman628@gmail.com",
-							"type": "text"
-						},
-						{
-							"key": "username",
-							"value": "peyman628",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "abcd628",
-							"type": "text"
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
 						}
-					]
-				},
-				"url": {
-					"raw": "{{baseurl}}/users/register/",
-					"host": [
-						"{{baseurl}}"
 					],
-					"path": [
-						"users",
-						"register",
-						""
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "users:register example",
-					"originalRequest": {
+					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -91,257 +56,104 @@
 							]
 						}
 					},
-					"status": "Created",
-					"code": 201,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Date",
-							"value": "Thu, 16 Sep 2021 06:17:58 GMT"
-						},
-						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.9.5"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Vary",
-							"value": "Accept"
-						},
-						{
-							"key": "Allow",
-							"value": "POST, OPTIONS"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Length",
-							"value": "81"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "same-origin"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"success\": \"Successfully created\",\n    \"detail\": \"Verify account using the sent email\"\n}"
-				}
-			]
-		},
-		{
-			"name": "users:login",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "email",
-							"value": "hassani.peyman628@gmail.com",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "abcd628",
-							"type": "text"
-						},
-						{
-							"key": "phone",
-							"value": "+989050832772",
-							"type": "text",
-							"disabled": true
+							"name": "users:register example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "hassani.peyman628@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "peyman628",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "abcd628",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/users/register/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"register",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 16 Sep 2021 06:17:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "81"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"Successfully created\",\n    \"detail\": \"Verify account using the sent email\"\n}"
 						}
 					]
 				},
-				"url": {
-					"raw": "{{baseurl}}/users/login/",
-					"host": [
-						"{{baseurl}}"
-					],
-					"path": [
-						"users",
-						"login",
-						""
-					]
-				}
-			},
-			"response": [
 				{
-					"name": "users:login example(email, password)",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "email",
-									"value": "hassani.peyman628@gmail.com",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "abcd628",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{baseurl}}/users/login/",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"users",
-								"login",
-								""
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"name": "users:login",
+					"event": [
 						{
-							"key": "Date",
-							"value": "Thu, 16 Sep 2021 07:56:10 GMT"
-						},
-						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.9.5"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Vary",
-							"value": "Accept"
-						},
-						{
-							"key": "Allow",
-							"value": "POST, OPTIONS"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Length",
-							"value": "510"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "same-origin"
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
 						}
 					],
-					"cookie": [],
-					"body": "{\n    \"email\": \"hassani.peyman628@gmail.com\",\n    \"username\": \"peyman628\",\n    \"tokens\": {\n        \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzMTg2NTM3MCwianRpIjoiNzEwZTI0Y2E3YmEyNDc3YzgzMjM1NzY0NzE4ODQ4NmUiLCJ1c2VyX2lkIjo1fQ.uuwPqGd9nwBSRxTc8annlpKEzSpGhS4MhX0uXvMXf8g\",\n        \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxNzc5NTcwLCJqdGkiOiI3ZWNlNWNjNzYyNDI0NjJhYTRlN2Y1MmJkNjc0YWZkYiIsInVzZXJfaWQiOjV9.GAgOXttHPfgGLMzhRcYcbbzAk7J8ls4CbiOsWZJy7-4\"\n    }\n}"
-				},
-				{
-					"name": "users:login example(phone, password)",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "phone",
-									"value": "+989050832772",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "abcd628",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{baseurl}}/users/login/",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"users",
-								"login",
-								""
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Thu, 16 Sep 2021 07:54:30 GMT"
-						},
-						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.9.5"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Vary",
-							"value": "Accept"
-						},
-						{
-							"key": "Allow",
-							"value": "POST, OPTIONS"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Length",
-							"value": "496"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "same-origin"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"phone\": \"+989050832772\",\n    \"username\": \"peyman628\",\n    \"tokens\": {\n        \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzMTg2NTI3MCwianRpIjoiNDk3M2IyYmEzNWI4NGZjMjg2YjUxYTIxOGZlYzVhMTMiLCJ1c2VyX2lkIjo1fQ.6G_t4Xzvek7ptQfPppQxXKG0tBWCB89TSCVWUczNBvM\",\n        \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxNzc5NDcwLCJqdGkiOiI3MzExY2Y3MTJkOWY0MDM3YmQ2MGZkZGRlNWFjMmJhNyIsInVzZXJfaWQiOjV9.FX2ApPWFMQfEvgtsP1jNjLlY6ZeVD3s2ygUE3mrqUT4\"\n    }\n}"
-				},
-				{
-					"name": "users:login example(email, phone, password)",
-					"originalRequest": {
+					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -360,7 +172,8 @@
 								{
 									"key": "phone",
 									"value": "+989050832772",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -376,99 +189,259 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Date",
-							"value": "Thu, 16 Sep 2021 07:57:09 GMT"
+							"name": "users:login example(email, password)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "hassani.peyman628@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "abcd628",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/users/login/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 16 Sep 2021 07:56:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "510"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"hassani.peyman628@gmail.com\",\n    \"username\": \"peyman628\",\n    \"tokens\": {\n        \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzMTg2NTM3MCwianRpIjoiNzEwZTI0Y2E3YmEyNDc3YzgzMjM1NzY0NzE4ODQ4NmUiLCJ1c2VyX2lkIjo1fQ.uuwPqGd9nwBSRxTc8annlpKEzSpGhS4MhX0uXvMXf8g\",\n        \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxNzc5NTcwLCJqdGkiOiI3ZWNlNWNjNzYyNDI0NjJhYTRlN2Y1MmJkNjc0YWZkYiIsInVzZXJfaWQiOjV9.GAgOXttHPfgGLMzhRcYcbbzAk7J8ls4CbiOsWZJy7-4\"\n    }\n}"
 						},
 						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.9.5"
+							"name": "users:login example(phone, password)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "phone",
+											"value": "+989050832772",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "abcd628",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/users/login/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 16 Sep 2021 07:54:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "496"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"phone\": \"+989050832772\",\n    \"username\": \"peyman628\",\n    \"tokens\": {\n        \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzMTg2NTI3MCwianRpIjoiNDk3M2IyYmEzNWI4NGZjMjg2YjUxYTIxOGZlYzVhMTMiLCJ1c2VyX2lkIjo1fQ.6G_t4Xzvek7ptQfPppQxXKG0tBWCB89TSCVWUczNBvM\",\n        \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxNzc5NDcwLCJqdGkiOiI3MzExY2Y3MTJkOWY0MDM3YmQ2MGZkZGRlNWFjMmJhNyIsInVzZXJfaWQiOjV9.FX2ApPWFMQfEvgtsP1jNjLlY6ZeVD3s2ygUE3mrqUT4\"\n    }\n}"
 						},
 						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Vary",
-							"value": "Accept"
-						},
-						{
-							"key": "Allow",
-							"value": "POST, OPTIONS"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Length",
-							"value": "534"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "same-origin"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"email\": \"hassani.peyman628@gmail.com\",\n    \"phone\": \"+989050832772\",\n    \"username\": \"peyman628\",\n    \"tokens\": {\n        \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzMTg2NTQyOSwianRpIjoiYzUwMWFkOGI2MDUxNDhkNzliMjdiYTI5OGY4ZDBmZWQiLCJ1c2VyX2lkIjo1fQ.GAq8yKTLPrcrLPG2HpDIxH-O-deLZEZWX8soulS_jeg\",\n        \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxNzc5NjI5LCJqdGkiOiIyYzhiYzVmM2FlZjA0NWRhOWY2YTJmMDU5MDIzYzMyOSIsInVzZXJfaWQiOjV9.CgOeiciZSSjYrjrZDxC6Dmxu2aoyQA6-4XNBfbZqMH0\"\n    }\n}"
-				}
-			]
-		},
-		{
-			"name": "users:email_verify",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": []
-				},
-				"url": {
-					"raw": "http://localhost:8000/users/email-verify/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxNzczNjc0LCJqdGkiOiJjMjA1OWVkZjM5YmY0NDY4OTdjZmQ1NjYxOGE2ZGVkOSIsInVzZXJfaWQiOjV9.l57PUA4vwHo_I-mciCJBStMl6wox7uhE00xSFm9fS98",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"users",
-						"email-verify",
-						""
-					],
-					"query": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxNzczNjc0LCJqdGkiOiJjMjA1OWVkZjM5YmY0NDY4OTdjZmQ1NjYxOGE2ZGVkOSIsInVzZXJfaWQiOjV9.l57PUA4vwHo_I-mciCJBStMl6wox7uhE00xSFm9fS98"
+							"name": "users:login example(email, phone, password)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "hassani.peyman628@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "abcd628",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "+989050832772",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/users/login/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 16 Sep 2021 07:57:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "534"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"hassani.peyman628@gmail.com\",\n    \"phone\": \"+989050832772\",\n    \"username\": \"peyman628\",\n    \"tokens\": {\n        \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzMTg2NTQyOSwianRpIjoiYzUwMWFkOGI2MDUxNDhkNzliMjdiYTI5OGY4ZDBmZWQiLCJ1c2VyX2lkIjo1fQ.GAq8yKTLPrcrLPG2HpDIxH-O-deLZEZWX8soulS_jeg\",\n        \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxNzc5NjI5LCJqdGkiOiIyYzhiYzVmM2FlZjA0NWRhOWY2YTJmMDU5MDIzYzMyOSIsInVzZXJfaWQiOjV9.CgOeiciZSSjYrjrZDxC6Dmxu2aoyQA6-4XNBfbZqMH0\"\n    }\n}"
 						}
 					]
-				}
-			},
-			"response": [
+				},
 				{
-					"name": "users:email_verify example",
-					"originalRequest": {
+					"name": "users:email_verify",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -495,86 +468,88 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Date",
-							"value": "Thu, 16 Sep 2021 06:19:41 GMT"
-						},
-						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.9.5"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Vary",
-							"value": "Accept"
-						},
-						{
-							"key": "Allow",
-							"value": "GET, HEAD, OPTIONS"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Length",
-							"value": "36"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "same-origin"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"success\": \"Successfully activated\"\n}"
-				}
-			]
-		},
-		{
-			"name": "users:password_reset",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "email",
-							"value": "hassani.peyman627@gmail.com",
-							"type": "text"
+							"name": "users:email_verify example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:8000/users/email-verify/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxNzczNjc0LCJqdGkiOiJjMjA1OWVkZjM5YmY0NDY4OTdjZmQ1NjYxOGE2ZGVkOSIsInVzZXJfaWQiOjV9.l57PUA4vwHo_I-mciCJBStMl6wox7uhE00xSFm9fS98",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"users",
+										"email-verify",
+										""
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxNzczNjc0LCJqdGkiOiJjMjA1OWVkZjM5YmY0NDY4OTdjZmQ1NjYxOGE2ZGVkOSIsInVzZXJfaWQiOjV9.l57PUA4vwHo_I-mciCJBStMl6wox7uhE00xSFm9fS98"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 16 Sep 2021 06:19:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"Successfully activated\"\n}"
 						}
 					]
 				},
-				"url": {
-					"raw": "{{baseurl}}/users/password-reset/",
-					"host": [
-						"{{baseurl}}"
-					],
-					"path": [
-						"users",
-						"password-reset",
-						""
-					]
-				}
-			},
-			"response": [
 				{
-					"name": "users:password_reset example",
-					"originalRequest": {
+					"name": "users:password_reset",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -582,7 +557,7 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "blackviking628@gmail.com",
+									"value": "hassani.peyman627@gmail.com",
 									"type": "text"
 								}
 							]
@@ -599,282 +574,89 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Date",
-							"value": "Thu, 16 Sep 2021 08:36:21 GMT"
-						},
-						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.9.5"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Vary",
-							"value": "Accept, Cookie"
-						},
-						{
-							"key": "Allow",
-							"value": "POST, OPTIONS"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Length",
-							"value": "60"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "same-origin"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"success\": \"We have sent you a link to reset your password\"\n}"
-				}
-			]
-		},
-		{
-			"name": "users:password_reset_complete",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "password",
-							"value": "asdf627",
-							"type": "text"
-						},
-						{
-							"key": "uidb64",
-							"value": "MQ",
-							"type": "text"
-						},
-						{
-							"key": "token",
-							"value": "at2p2y-55f2cc8ff84c5b38f8afbc757f429a90",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "{{baseurl}}/users/password-reset-complete/",
-					"host": [
-						"{{baseurl}}"
-					],
-					"path": [
-						"users",
-						"password-reset-complete",
-						""
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "users:password_reset_complete example",
-					"originalRequest": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
+							"name": "users:password_reset example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "blackviking628@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/users/password-reset/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"password-reset",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"key": "password",
-									"value": "abcd627",
-									"type": "text"
+									"key": "Date",
+									"value": "Thu, 16 Sep 2021 08:36:21 GMT"
 								},
 								{
-									"key": "uidb64",
-									"value": "Nw",
-									"type": "text"
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
 								},
 								{
-									"key": "token",
-									"value": "at2kei-569a75a705f146dbfd6b84f24a7ecc2a",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{baseurl}}/users/password-reset-complete/",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"users",
-								"password-reset-complete",
-								""
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Thu, 16 Sep 2021 08:47:13 GMT"
-						},
-						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.9.5"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Vary",
-							"value": "Accept, Cookie"
-						},
-						{
-							"key": "Allow",
-							"value": "PATCH, OPTIONS"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Length",
-							"value": "37"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "same-origin"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"success\": \"Password reset complete\"\n}"
-				},
-				{
-					"name": "users:password_reset example",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
+									"key": "Content-Type",
+									"value": "application/json"
+								},
 								{
-									"key": "email",
-									"value": "blackviking628@gmail.com",
-									"type": "text"
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
 								}
-							]
-						},
-						"url": {
-							"raw": "{{baseurl}}/users/password-reset/",
-							"host": [
-								"{{baseurl}}"
 							],
-							"path": [
-								"users",
-								"password-reset",
-								""
-							]
+							"cookie": [],
+							"body": "{\n    \"success\": \"We have sent you a link to reset your password\"\n}"
 						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Thu, 16 Sep 2021 08:36:21 GMT"
-						},
-						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.9.5"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Vary",
-							"value": "Accept, Cookie"
-						},
-						{
-							"key": "Allow",
-							"value": "POST, OPTIONS"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Length",
-							"value": "60"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "same-origin"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"success\": \"We have sent you a link to reset your password\"\n}"
-				}
-			]
-		},
-		{
-			"name": "users:password_reset_confirm",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": []
-				},
-				"url": {
-					"raw": "http://localhost:8000/users/password-reset/MQ/at2p2y-55f2cc8ff84c5b38f8afbc757f429a90/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"users",
-						"password-reset",
-						"MQ",
-						"at2p2y-55f2cc8ff84c5b38f8afbc757f429a90",
-						""
 					]
-				}
-			},
-			"response": [
+				},
 				{
-					"name": "users:password_reset_confirm example",
-					"originalRequest": {
+					"name": "users:password_reset_confirm",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -897,83 +679,81 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Date",
-							"value": "Thu, 16 Sep 2021 10:20:41 GMT"
-						},
-						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.9.5"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Vary",
-							"value": "Accept, Cookie"
-						},
-						{
-							"key": "Allow",
-							"value": "GET, HEAD, OPTIONS"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Length",
-							"value": "95"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "same-origin"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"success\": \"Credentials valid\",\n    \"uidb64\": \"MQ\",\n    \"token\": \"at2p2y-55f2cc8ff84c5b38f8afbc757f429a90\"\n}"
-				}
-			]
-		},
-		{
-			"name": "users:logout",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "refresh",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzMTg3MzE2OSwianRpIjoiZjFmMGI0Y2NhODg4NDA1YmIwNzRlZDM4ZDgzMjgzMDgiLCJ1c2VyX2lkIjo1fQ.1rHf-7k7WC_o87pQgc05uRUjeeTd6ax-wYJ38gFQGhs",
-							"type": "text"
+							"name": "users:password_reset_confirm example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:8000/users/password-reset/MQ/at2p2y-55f2cc8ff84c5b38f8afbc757f429a90/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"users",
+										"password-reset",
+										"MQ",
+										"at2p2y-55f2cc8ff84c5b38f8afbc757f429a90",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 16 Sep 2021 10:20:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"Credentials valid\",\n    \"uidb64\": \"MQ\",\n    \"token\": \"at2p2y-55f2cc8ff84c5b38f8afbc757f429a90\"\n}"
 						}
 					]
 				},
-				"url": {
-					"raw": "{{baseurl}}/users/logout/",
-					"host": [
-						"{{baseurl}}"
-					],
-					"path": [
-						"users",
-						"logout",
-						""
-					]
-				}
-			},
-			"response": [
 				{
-					"name": "users:logout example",
-					"originalRequest": {
+					"name": "users:logout",
+					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -998,79 +778,274 @@
 							]
 						}
 					},
-					"status": "No Content",
-					"code": 204,
-					"_postman_previewlanguage": "plain",
-					"header": [
+					"response": [
 						{
-							"key": "Date",
-							"value": "Thu, 16 Sep 2021 10:06:44 GMT"
-						},
-						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.9.5"
-						},
-						{
-							"key": "Vary",
-							"value": "Accept, Cookie"
-						},
-						{
-							"key": "Allow",
-							"value": "POST, OPTIONS"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Length",
-							"value": "0"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "same-origin"
-						}
-					],
-					"cookie": [],
-					"body": null
-				}
-			]
-		},
-		{
-			"name": "users:generate_otp",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "phone",
-							"value": "+989372632989",
-							"type": "text"
+							"name": "users:logout example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "refresh",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzMTg3MzE2OSwianRpIjoiZjFmMGI0Y2NhODg4NDA1YmIwNzRlZDM4ZDgzMjgzMDgiLCJ1c2VyX2lkIjo1fQ.1rHf-7k7WC_o87pQgc05uRUjeeTd6ax-wYJ38gFQGhs",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/users/logout/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"logout",
+										""
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 16 Sep 2021 10:06:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
 						}
 					]
 				},
-				"url": {
-					"raw": "{{baseurl}}/users/generate-otp/",
-					"host": [
-						"{{baseurl}}"
-					],
-					"path": [
-						"users",
-						"generate-otp",
-						""
-					]
-				}
-			},
-			"response": [
 				{
-					"name": "users:generate_otp example",
-					"originalRequest": {
+					"name": "users:password_reset_complete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "asdf627",
+									"type": "text"
+								},
+								{
+									"key": "uidb64",
+									"value": "MQ",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "at2p2y-55f2cc8ff84c5b38f8afbc757f429a90",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/users/password-reset-complete/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"password-reset-complete",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "users:password_reset_complete example",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "password",
+											"value": "abcd627",
+											"type": "text"
+										},
+										{
+											"key": "uidb64",
+											"value": "Nw",
+											"type": "text"
+										},
+										{
+											"key": "token",
+											"value": "at2kei-569a75a705f146dbfd6b84f24a7ecc2a",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/users/password-reset-complete/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"password-reset-complete",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 16 Sep 2021 08:47:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "PATCH, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"Password reset complete\"\n}"
+						},
+						{
+							"name": "users:password_reset example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "blackviking628@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/users/password-reset/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"password-reset",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 16 Sep 2021 08:36:21 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"We have sent you a link to reset your password\"\n}"
+						}
+					]
+				},
+				{
+					"name": "users:generate_otp",
+					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -1095,159 +1070,154 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Date",
-							"value": "Thu, 16 Sep 2021 11:09:02 GMT"
-						},
-						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.9.5"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Vary",
-							"value": "Accept, Cookie"
-						},
-						{
-							"key": "Allow",
-							"value": "POST, OPTIONS"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Length",
-							"value": "60"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "same-origin"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"pk\": 1,\n    \"phone\": \"+989372632989\",\n    \"debug_mode_token\": \"627765\"\n}"
-				},
-				{
-					"name": "users:generate_otp example(non-debug mode)",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "phone",
-									"value": "+989372632989",
-									"type": "text"
+							"name": "users:generate_otp example(debug_mode)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "phone",
+											"value": "+989372632989",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/users/generate-otp/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"generate-otp",
+										""
+									]
 								}
-							]
-						},
-						"url": {
-							"raw": "{{baseurl}}/users/generate-otp/",
-							"host": [
-								"{{baseurl}}"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 16 Sep 2021 11:09:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
 							],
-							"path": [
-								"users",
-								"generate-otp",
-								""
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Thu, 16 Sep 2021 11:22:55 GMT"
+							"cookie": [],
+							"body": "{\n    \"pk\": 1,\n    \"phone\": \"+989372632989\",\n    \"debug_mode_token\": \"627765\"\n}"
 						},
 						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.9.5"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Vary",
-							"value": "Accept, Cookie"
-						},
-						{
-							"key": "Allow",
-							"value": "POST, OPTIONS"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Length",
-							"value": "32"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "same-origin"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"pk\": 3,\n    \"phone\": \"+989372632989\"\n}"
-				}
-			]
-		},
-		{
-			"name": "users:validate_otp",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "pk",
-							"value": "6",
-							"type": "text"
-						},
-						{
-							"key": "otp",
-							"value": "446029",
-							"type": "text"
+							"name": "users:generate_otp example(non-debug mode)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "phone",
+											"value": "+989372632989",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/users/generate-otp/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"generate-otp",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 16 Sep 2021 11:22:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"pk\": 3,\n    \"phone\": \"+989372632989\"\n}"
 						}
 					]
 				},
-				"url": {
-					"raw": "{{baseurl}}/users/validate-otp/",
-					"host": [
-						"{{baseurl}}"
-					],
-					"path": [
-						"users",
-						"validate-otp",
-						""
-					]
-				}
-			},
-			"response": [
 				{
-					"name": "users:validate_otp example",
-					"originalRequest": {
+					"name": "users:validate_otp",
+					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -1255,12 +1225,12 @@
 							"urlencoded": [
 								{
 									"key": "pk",
-									"value": "2",
+									"value": "6",
 									"type": "text"
 								},
 								{
 									"key": "otp",
-									"value": "024324",
+									"value": "446029",
 									"type": "text"
 								}
 							]
@@ -1277,49 +1247,3089 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Date",
-							"value": "Thu, 16 Sep 2021 11:17:58 GMT"
-						},
-						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.9.5"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Vary",
-							"value": "Accept, Cookie"
-						},
-						{
-							"key": "Allow",
-							"value": "POST, OPTIONS"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Length",
-							"value": "472"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "same-origin"
+							"name": "users:validate_otp example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "pk",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "otp",
+											"value": "024324",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/users/validate-otp/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"validate-otp",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 16 Sep 2021 11:17:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "472"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"peyman627\",\n    \"tokens\": {\n        \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzMTg3NzQ3OCwianRpIjoiYzBkN2IyZmFkZGJmNDk3ODhlZGMyMDA0N2VkYmJmYjUiLCJ1c2VyX2lkIjoxfQ.eLP4YoE2xRZniaUgQyeMM6Z1DkW4XvCOXoDGnncuXZc\",\n        \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxNzkxNjc4LCJqdGkiOiJiMzk1MTcxOWZhNTQ0ZmMxOTVjOWIyMWE1NWU5ZmM4MyIsInVzZXJfaWQiOjF9.l3jyG2Y81L6UgD9yo9aom3sGBSB5s8hYthxgwdSXx2U\"\n    }\n}"
 						}
-					],
-					"cookie": [],
-					"body": "{\n    \"username\": \"peyman627\",\n    \"tokens\": {\n        \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzMTg3NzQ3OCwianRpIjoiYzBkN2IyZmFkZGJmNDk3ODhlZGMyMDA0N2VkYmJmYjUiLCJ1c2VyX2lkIjoxfQ.eLP4YoE2xRZniaUgQyeMM6Z1DkW4XvCOXoDGnncuXZc\",\n        \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxNzkxNjc4LCJqdGkiOiJiMzk1MTcxOWZhNTQ0ZmMxOTVjOWIyMWE1NWU5ZmM4MyIsInVzZXJfaWQiOjF9.l3jyG2Y81L6UgD9yo9aom3sGBSB5s8hYthxgwdSXx2U\"\n    }\n}"
+					]
+				},
+				{
+					"name": "users:token_refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "refresh",
+									"value": "{{refresh_token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/users/token/refresh/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "users:token_refresh example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "refresh",
+											"value": "{{refresh_token}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/users/token/refresh/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"users",
+										"token",
+										"refresh",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 14:29:47 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "218"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMyMDY0MTg3LCJqdGkiOiI2MTU4OTI1ZWJhMDU0YmU5YjYxZDUzMTRiYWIwNzk2ZSIsInVzZXJfaWQiOjF9.nuBEs7zExFV-C1q3exICDb_Pfb4wHHWYy-6rH002_dw\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "profiles",
+			"item": [
+				{
+					"name": "profiles:profile_list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/profiles/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profiles",
+								""
+							]
+						},
+						"description": "list the latest created profiles in the network"
+					},
+					"response": [
+						{
+							"name": "profiles:profile_list example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/profiles/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:44:29 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2777"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 7,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"user\": {\n                \"username\": \"blackviking434\",\n                \"email\": \"blackviking434@gmail.com\",\n                \"phone\": \"+989372632989\",\n                \"created_time\": \"2021-09-19T17:31:20.047361+04:30\",\n                \"updated_time\": \"2021-09-19T17:31:41.870593+04:30\"\n            },\n            \"name\": \"matin nazari\",\n            \"bio\": \"I know no time management\",\n            \"followers_count\": 0,\n            \"followings_count\": 0,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-19T17:31:20.049198+04:30\",\n            \"updated_time\": \"2021-09-19T17:32:42.548671+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"Tistonedide\",\n                \"email\": \"EileenKHawthorne@teleworm.us\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-19T17:30:36.510723+04:30\",\n                \"updated_time\": \"2021-09-19T17:30:38.826077+04:30\"\n            },\n            \"name\": \"\",\n            \"bio\": \"\",\n            \"followers_count\": 0,\n            \"followings_count\": 0,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-19T17:30:36.512653+04:30\",\n            \"updated_time\": \"2021-09-19T17:30:36.512681+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"Coing1989\",\n                \"email\": \"MaggieCDupree@rhyta.com\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-19T17:29:57.414350+04:30\",\n                \"updated_time\": \"2021-09-19T17:30:17.547026+04:30\"\n            },\n            \"name\": \"\",\n            \"bio\": \"\",\n            \"followers_count\": 2,\n            \"followings_count\": 1,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-19T17:29:57.416093+04:30\",\n            \"updated_time\": \"2021-09-19T17:29:57.416135+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"Himag1994\",\n                \"email\": \"HowardLSmith@armyspy.com\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-19T17:29:07.967899+04:30\",\n                \"updated_time\": \"2021-09-19T17:29:26.744118+04:30\"\n            },\n            \"name\": \"\",\n            \"bio\": \"\",\n            \"followers_count\": 1,\n            \"followings_count\": 1,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-19T17:29:07.969521+04:30\",\n            \"updated_time\": \"2021-09-19T17:29:07.969543+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"blackviking628\",\n                \"email\": \"blackviking628@gmail.com\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-18T16:54:14.349438+04:30\",\n                \"updated_time\": \"2021-09-18T16:54:19.638521+04:30\"\n            },\n            \"name\": \"leila\",\n            \"bio\": \"super chill girl\",\n            \"followers_count\": 0,\n            \"followings_count\": 3,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-18T16:54:14.351360+04:30\",\n            \"updated_time\": \"2021-09-18T16:55:00.308795+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"peyman628\",\n                \"email\": \"hassani.peyman628@gmail.com\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-18T16:53:52.392114+04:30\",\n                \"updated_time\": \"2021-09-18T16:53:56.419526+04:30\"\n            },\n            \"name\": \"peyman hassani\",\n            \"bio\": \"second account I made\",\n            \"followers_count\": 1,\n            \"followings_count\": 1,\n            \"following_status\": true,\n            \"created_time\": \"2021-09-18T16:53:52.393778+04:30\",\n            \"updated_time\": \"2021-09-18T16:56:30.760607+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"peyman627\",\n                \"email\": \"hassani.peyman627@gmail.com\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-18T16:53:18.788978+04:30\",\n                \"updated_time\": \"2021-09-18T16:53:18.811334+04:30\"\n            },\n            \"name\": \"peyman hassani\",\n            \"bio\": \"admin's profile Pog\",\n            \"followers_count\": 3,\n            \"followings_count\": 1,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-18T16:53:18.806226+04:30\",\n            \"updated_time\": \"2021-09-18T16:55:45.191218+04:30\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "profiles:profile_detail(retrieve)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/profiles/:profile_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profiles",
+								":profile_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "profile_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "profiles:profile_detail example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/profiles/:profile_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										":profile_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "profile_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:47:05 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "402"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"username\": \"peyman627\",\n        \"email\": \"hassani.peyman627@gmail.com\",\n        \"phone\": null,\n        \"created_time\": \"2021-09-18T16:53:18.788978+04:30\",\n        \"updated_time\": \"2021-09-18T16:53:18.811334+04:30\"\n    },\n    \"name\": \"peyman hassani\",\n    \"bio\": \"admin's profile Pog\",\n    \"followers_count\": 3,\n    \"followings_count\": 1,\n    \"following_status\": false,\n    \"created_time\": \"2021-09-18T16:53:18.806226+04:30\",\n    \"updated_time\": \"2021-09-18T16:55:45.191218+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "profiles:profile_detail(partial_update)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"phone\": \"+98050832772\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/profiles/:profile_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profiles",
+								":profile_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "profile_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "for example updating the user's(owner) phone number"
+					},
+					"response": [
+						{
+							"name": "profiles:profile_detail(partial_update) example",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"phone\": \"+98050832772\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}/profiles/:profile_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										":profile_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "profile_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:55:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "412"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"username\": \"peyman627\",\n        \"email\": \"hassani.peyman627@gmail.com\",\n        \"phone\": \"+98050832772\",\n        \"created_time\": \"2021-09-18T16:53:18.788978+04:30\",\n        \"updated_time\": \"2021-09-19T18:25:38.604209+04:30\"\n    },\n    \"name\": \"peyman hassani\",\n    \"bio\": \"admin's profile Pog\",\n    \"followers_count\": 3,\n    \"followings_count\": 1,\n    \"following_status\": false,\n    \"created_time\": \"2021-09-18T16:53:18.806226+04:30\",\n    \"updated_time\": \"2021-09-19T18:25:38.597334+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "profiles:profile_detail(update)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"username\": \"peyman627\",\n        \"email\": \"hassani.peyman627@gmail.com\",\n        \"phone\": \"+98050832772\"\n    },\n    \"name\": \"peyman hassani\",\n    \"bio\": \"I don't know, doge to the moon\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/profiles/:profile_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profiles",
+								":profile_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "profile_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "for example updating the user's(owner) bio"
+					},
+					"response": [
+						{
+							"name": "profiles:profile_detail(update) example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"username\": \"peyman627\",\n        \"email\": \"hassani.peyman627@gmail.com\",\n        \"phone\": \"+98050832772\"\n    },\n    \"name\": \"peyman hassani\",\n    \"bio\": \"I don't know, doge to the moon\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}/profiles/:profile_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										":profile_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "profile_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:58:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "423"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"username\": \"peyman627\",\n        \"email\": \"hassani.peyman627@gmail.com\",\n        \"phone\": \"+98050832772\",\n        \"created_time\": \"2021-09-18T16:53:18.788978+04:30\",\n        \"updated_time\": \"2021-09-19T18:28:39.244891+04:30\"\n    },\n    \"name\": \"peyman hassani\",\n    \"bio\": \"I don't know, doge to the moon\",\n    \"followers_count\": 3,\n    \"followings_count\": 1,\n    \"following_status\": false,\n    \"created_time\": \"2021-09-18T16:53:18.806226+04:30\",\n    \"updated_time\": \"2021-09-19T18:28:39.240499+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "profiles:profile_detail(destory)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/profiles/:profile_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profiles",
+								":profile_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "profile_id",
+									"value": "4"
+								}
+							]
+						},
+						"description": "delete the user's(owner) profile"
+					},
+					"response": [
+						{
+							"name": "profiles:profile_detail(destory)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}/profiles/:profile_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										":profile_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "profile_id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 14:07:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "profiles:profile_follow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/profiles/:profile_id/follow/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profiles",
+								":profile_id",
+								"follow",
+								""
+							],
+							"variable": [
+								{
+									"key": "profile_id",
+									"value": "6"
+								}
+							]
+						},
+						"description": "follow the profile as the current user"
+					},
+					"response": [
+						{
+							"name": "profiles:profile_follow example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/profiles/:profile_id/follow/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										":profile_id",
+										"follow",
+										""
+									],
+									"variable": [
+										{
+											"key": "profile_id",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 14:10:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"is_following\": true,\n    \"created\": true\n}"
+						},
+						{
+							"name": "profiles:profile_follow example(user follows again)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/profiles/:profile_id/follow/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										":profile_id",
+										"follow",
+										""
+									],
+									"variable": [
+										{
+											"key": "profile_id",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 14:11:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"is_following\": true,\n    \"created\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "profiles:follower_relation_list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/profiles/:profile_id/followers/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profiles",
+								":profile_id",
+								"followers",
+								""
+							],
+							"variable": [
+								{
+									"key": "profile_id",
+									"value": "5"
+								}
+							]
+						},
+						"description": "list the users that follow the current user"
+					},
+					"response": [
+						{
+							"name": "profiles:follower_relation_list example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/profiles/:profile_id/followers/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										":profile_id",
+										"followers",
+										""
+									],
+									"variable": [
+										{
+											"key": "profile_id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 14:19:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "441"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 2,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/profiles/5/followers/9/\",\n            \"user\": \"http://localhost:8000/profiles/5/\",\n            \"profile\": \"http://localhost:8000/profiles/5/\",\n            \"created_time\": \"2021-09-19T17:33:46.123522+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/profiles/5/followers/7/\",\n            \"user\": \"http://localhost:8000/profiles/3/\",\n            \"profile\": \"http://localhost:8000/profiles/5/\",\n            \"created_time\": \"2021-09-19T17:33:17.682909+04:30\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "profiles:follower_relation_detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/profiles/:profile_id/followers/:follow_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profiles",
+								":profile_id",
+								"followers",
+								":follow_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "profile_id",
+									"value": "5"
+								},
+								{
+									"key": "follow_id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "profiles:follower_relation_detail example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/profiles/:profile_id/followers/:follow_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										":profile_id",
+										"followers",
+										":follow_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "profile_id",
+											"value": "5"
+										},
+										{
+											"key": "follow_id",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 14:21:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "194"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/profiles/5/followers/7/\",\n    \"user\": \"http://localhost:8000/profiles/3/\",\n    \"profile\": \"http://localhost:8000/profiles/5/\",\n    \"created_time\": \"2021-09-19T17:33:17.682909+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "profiles:follower_relation_detail(destroy)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/profiles/:profile_id/followers/:follow_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profiles",
+								":profile_id",
+								"followers",
+								":follow_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "profile_id",
+									"value": "5"
+								},
+								{
+									"key": "follow_id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "profiles:follower_relation_detail example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/profiles/:profile_id/followers/:follow_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										":profile_id",
+										"followers",
+										":follow_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "profile_id",
+											"value": "5"
+										},
+										{
+											"key": "follow_id",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 14:21:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "194"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/profiles/5/followers/7/\",\n    \"user\": \"http://localhost:8000/profiles/3/\",\n    \"profile\": \"http://localhost:8000/profiles/5/\",\n    \"created_time\": \"2021-09-19T17:33:17.682909+04:30\"\n}"
+						},
+						{
+							"name": "profiles:follower_relation_detail(destroy)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/profiles/:profile_id/followers/:follow_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										":profile_id",
+										"followers",
+										":follow_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "profile_id",
+											"value": "5"
+										},
+										{
+											"key": "follow_id",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 14:28:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "profiles:following_relation_list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/profiles/:profile_id/followings/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profiles",
+								":profile_id",
+								"followings",
+								""
+							],
+							"variable": [
+								{
+									"key": "profile_id",
+									"value": "5"
+								}
+							]
+						},
+						"description": "list the users that the current user is following"
+					},
+					"response": [
+						{
+							"name": "profiles:following_relation_list example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/profiles/:profile_id/followings/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										":profile_id",
+										"followings",
+										""
+									],
+									"variable": [
+										{
+											"key": "profile_id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 14:24:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "444"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 2,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/profiles/5/followings/13/\",\n            \"user\": \"http://localhost:8000/profiles/5/\",\n            \"profile\": \"http://localhost:8000/profiles/2/\",\n            \"created_time\": \"2021-09-19T18:46:27.984773+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/profiles/5/followings/9/\",\n            \"user\": \"http://localhost:8000/profiles/5/\",\n            \"profile\": \"http://localhost:8000/profiles/5/\",\n            \"created_time\": \"2021-09-19T17:33:46.123522+04:30\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "profiles:following_relation_detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/profiles/:profile_id/followings/:follow_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profiles",
+								":profile_id",
+								"followings",
+								":follow_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "profile_id",
+									"value": "5"
+								},
+								{
+									"key": "follow_id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "profiles:following_relation_detail example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/profiles/:profile_id/followings/:follow_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										":profile_id",
+										"followings",
+										":follow_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "profile_id",
+											"value": "5"
+										},
+										{
+											"key": "follow_id",
+											"value": "13"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 14:23:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "196"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/profiles/5/followings/13/\",\n    \"user\": \"http://localhost:8000/profiles/5/\",\n    \"profile\": \"http://localhost:8000/profiles/2/\",\n    \"created_time\": \"2021-09-19T18:46:27.984773+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "profiles:following_relation_detail(destroy)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/profiles/:profile_id/followings/:follow_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"profiles",
+								":profile_id",
+								"followings",
+								":follow_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "profile_id",
+									"value": "5"
+								},
+								{
+									"key": "follow_id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "profiles:following_relation_detail example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/profiles/:profile_id/followings/:follow_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										":profile_id",
+										"followings",
+										":follow_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "profile_id",
+											"value": "5"
+										},
+										{
+											"key": "follow_id",
+											"value": "13"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 14:23:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "196"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/profiles/5/followings/13/\",\n    \"user\": \"http://localhost:8000/profiles/5/\",\n    \"profile\": \"http://localhost:8000/profiles/2/\",\n    \"created_time\": \"2021-09-19T18:46:27.984773+04:30\"\n}"
+						},
+						{
+							"name": "profiles:following_relation_detail(destroy) example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/profiles/:profile_id/followings/:follow_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"profiles",
+										":profile_id",
+										"followings",
+										":follow_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "profile_id",
+											"value": "5"
+										},
+										{
+											"key": "follow_id",
+											"value": "13"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 14:29:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "posts:post_list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/posts/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								""
+							]
+						},
+						"description": "list current user's posts"
+					},
+					"response": [
+						{
+							"name": "posts:post_list example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/posts/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"posts",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:07:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "634"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 2,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/posts/5/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 2,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"another great day with my buddies\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:25:17.627144+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/4/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 2,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"what a great day\",\n            \"image\": \"http://localhost:8000/media/posts/images/photo_2020-12-03_14-19-45.jpg\",\n            \"created_time\": \"2021-09-18T16:58:50.986955+04:30\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "posts:post_list(create)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "in Tom Brady we believe",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								""
+							]
+						},
+						"description": "create post as the current user"
+					},
+					"response": [
+						{
+							"name": "posts:post_list(create) example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "content",
+											"value": "in Tom Brady we believe",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/posts/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"posts",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:10:56 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Location",
+									"value": "http://localhost:8000/posts/8/"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/posts/8/\",\n    \"parent\": null,\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"likes_count\": 0,\n    \"liked_status\": false,\n    \"repost_status\": false,\n    \"content\": \"in Tom Brady we believe\",\n    \"image\": null,\n    \"created_time\": \"2021-09-19T17:40:56.446483+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "posts:post_list_discover",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/posts/discover/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								"discover",
+								""
+							]
+						},
+						"description": "list latest posts in the network(contents are cached for a short period)"
+					},
+					"response": [
+						{
+							"name": "posts:post_list_discover example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/posts/discover/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"posts",
+										"discover",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:16:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "Expires",
+									"value": "Sun, 19 Sep 2021 13:23:37 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=600"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1971"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 7,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/posts/8/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 0,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"in Tom Brady we believe\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:40:56.446483+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/7/\",\n            \"parent\": \"http://localhost:8000/posts/4/\",\n            \"user\": \"http://localhost:8000/profiles/4/\",\n            \"likes_count\": 2,\n            \"liked_status\": false,\n            \"repost_status\": true,\n            \"content\": \"indeed it its\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:35:24.149959+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/6/\",\n            \"parent\": \"http://localhost:8000/posts/5/\",\n            \"user\": \"http://localhost:8000/profiles/6/\",\n            \"likes_count\": 1,\n            \"liked_status\": false,\n            \"repost_status\": true,\n            \"content\": \"is it still going on?\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:34:28.480587+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/5/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 2,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"another great day with my buddies\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:25:17.627144+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/4/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 2,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"what a great day\",\n            \"image\": \"http://localhost:8000/media/posts/images/photo_2020-12-03_14-19-45.jpg\",\n            \"created_time\": \"2021-09-18T16:58:50.986955+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/3/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/3/\",\n            \"likes_count\": 1,\n            \"liked_status\": true,\n            \"repost_status\": false,\n            \"content\": \"how u doin' guys?\",\n            \"image\": null,\n            \"created_time\": \"2021-09-18T16:58:19.409222+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/2/\",\n            \"parent\": \"http://localhost:8000/posts/4/\",\n            \"user\": \"http://localhost:8000/profiles/2/\",\n            \"likes_count\": 1,\n            \"liked_status\": true,\n            \"repost_status\": true,\n            \"content\": \"still the best post\",\n            \"image\": null,\n            \"created_time\": \"2021-09-18T16:58:04.379701+04:30\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "posts:post_feed(list)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/posts/feed/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								"feed",
+								""
+							]
+						},
+						"description": "list following users latest posts"
+					},
+					"response": [
+						{
+							"name": "posts:post_feed(list) example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/posts/feed/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"posts",
+										"feed",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:17:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1168"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 4,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/posts/8/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 0,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"in Tom Brady we believe\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:40:56.446483+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/5/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 2,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"another great day with my buddies\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:25:17.627144+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/4/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 2,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"what a great day\",\n            \"image\": \"http://localhost:8000/media/posts/images/photo_2020-12-03_14-19-45.jpg\",\n            \"created_time\": \"2021-09-18T16:58:50.986955+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/2/\",\n            \"parent\": \"http://localhost:8000/posts/4/\",\n            \"user\": \"http://localhost:8000/profiles/2/\",\n            \"likes_count\": 1,\n            \"liked_status\": true,\n            \"repost_status\": true,\n            \"content\": \"still the best post\",\n            \"image\": null,\n            \"created_time\": \"2021-09-18T16:58:04.379701+04:30\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "posts:post_detail(retrieve)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/posts/:post_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								":post_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "post_id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "posts:post_detail(retrieve) example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/posts/:post_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"posts",
+										":post_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "post_id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:20:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "316"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/posts/4/\",\n    \"parent\": null,\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"likes_count\": 2,\n    \"liked_status\": false,\n    \"repost_status\": false,\n    \"content\": \"what a great day\",\n    \"image\": \"http://localhost:8000/media/posts/images/photo_2020-12-03_14-19-45.jpg\",\n    \"created_time\": \"2021-09-18T16:58:50.986955+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "posts:post_detail(destory)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/posts/:post_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								":post_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "post_id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "posts:post_detail(destory) example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/posts/:post_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"posts",
+										":post_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "post_id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:21:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "posts:post_detail(partial_update)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "forget what I said Messi is the goat",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts/:post_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								":post_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "post_id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "posts:post_detail(partial_update)",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "content",
+											"value": "forget what I said Messi is the goat",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/posts/:post_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"posts",
+										":post_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "post_id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:23:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "336"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/posts/4/\",\n    \"parent\": null,\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"likes_count\": 2,\n    \"liked_status\": false,\n    \"repost_status\": false,\n    \"content\": \"forget what I said Messi is the goat\",\n    \"image\": \"http://localhost:8000/media/posts/images/photo_2020-12-03_14-19-45.jpg\",\n    \"created_time\": \"2021-09-18T16:58:50.986955+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "posts:post_detail(update)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "hold up, Luffy is now the king",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/posts/:post_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								":post_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "post_id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "posts:post_detail(update) example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "content",
+											"value": "hold up, Luffy is now the king",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/posts/:post_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"posts",
+										":post_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "post_id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:26:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "330"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/posts/4/\",\n    \"parent\": null,\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"likes_count\": 2,\n    \"liked_status\": false,\n    \"repost_status\": false,\n    \"content\": \"hold up, Luffy is now the king\",\n    \"image\": \"http://localhost:8000/media/posts/images/photo_2020-12-03_14-19-45.jpg\",\n    \"created_time\": \"2021-09-18T16:58:50.986955+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "posts:post_like",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/posts/:post_id/like/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								":post_id",
+								"like",
+								""
+							],
+							"variable": [
+								{
+									"key": "post_id",
+									"value": "4"
+								}
+							]
+						},
+						"description": "like the post as the current user"
+					},
+					"response": [
+						{
+							"name": "posts:post_like example(user likes again)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/posts/:post_id/like/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"posts",
+										":post_id",
+										"like",
+										""
+									],
+									"variable": [
+										{
+											"key": "post_id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:31:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"is_liked\": true,\n    \"created\": false\n}"
+						},
+						{
+							"name": "posts:post_like example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/posts/:post_id/like/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"posts",
+										":post_id",
+										"like",
+										""
+									],
+									"variable": [
+										{
+											"key": "post_id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:30:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"is_liked\": true,\n    \"created\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "posts:post_like_list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/posts/:post_id/likes/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								":post_id",
+								"likes",
+								""
+							],
+							"variable": [
+								{
+									"key": "post_id",
+									"value": "4"
+								}
+							]
+						},
+						"description": "list the likes for this post"
+					},
+					"response": [
+						{
+							"name": "posts:post_like_list example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/posts/:post_id/likes/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"posts",
+										":post_id",
+										"likes",
+										""
+									],
+									"variable": [
+										{
+											"key": "post_id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:32:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "598"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 3,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/posts/4/likes/13/\",\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"post\": \"http://localhost:8000/posts/4/\",\n            \"created_time\": \"2021-09-19T18:00:18.738220+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/4/likes/9/\",\n            \"user\": \"http://localhost:8000/profiles/5/\",\n            \"post\": \"http://localhost:8000/posts/4/\",\n            \"created_time\": \"2021-09-19T17:35:31.076806+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/4/likes/2/\",\n            \"user\": \"http://localhost:8000/profiles/3/\",\n            \"post\": \"http://localhost:8000/posts/4/\",\n            \"created_time\": \"2021-09-18T16:59:09.877850+04:30\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "posts:post_like_detail(retrieve)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/posts/:post_id/likes/:like_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								":post_id",
+								"likes",
+								":like_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "post_id",
+									"value": "4"
+								},
+								{
+									"key": "like_id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "posts:post_like_detail(retrieve) example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/posts/:post_id/likes/:like_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"posts",
+										":post_id",
+										"likes",
+										":like_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "post_id",
+											"value": "4"
+										},
+										{
+											"key": "like_id",
+											"value": "13"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:35:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "182"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/posts/4/likes/13/\",\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"post\": \"http://localhost:8000/posts/4/\",\n    \"created_time\": \"2021-09-19T18:00:18.738220+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "posts:post_like_detail(destroy)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/posts/:post_id/likes/:like_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"posts",
+								":post_id",
+								"likes",
+								":like_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "post_id",
+									"value": "7"
+								},
+								{
+									"key": "like_id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "posts:post_like_detail(destroy) example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/posts/:post_id/likes/:like_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"posts",
+										":post_id",
+										"likes",
+										":like_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "post_id",
+											"value": "7"
+										},
+										{
+											"key": "like_id",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 19 Sep 2021 13:39:56 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
 				}
 			]
 		}
@@ -1348,6 +4358,14 @@
 		{
 			"key": "baseurl",
 			"value": "http://localhost:8000"
+		},
+		{
+			"key": "refresh_token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzMjEwNjQ3MywianRpIjoiNzEzNjM4ODcyNDdlNGZlNTljOTNmZTYzMGU0ODNkNDMiLCJ1c2VyX2lkIjoxfQ.7E6qXf0cJXggyV1y_oQSBhW-bzI124KVx-4gWpmAFGE"
+		},
+		{
+			"key": "access_token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMyMDY0MTg3LCJqdGkiOiI2MTU4OTI1ZWJhMDU0YmU5YjYxZDUzMTRiYWIwNzk2ZSIsInVzZXJfaWQiOjF9.nuBEs7zExFV-C1q3exICDb_Pfb4wHHWYy-6rH002_dw"
 		}
 	]
 }
