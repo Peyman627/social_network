@@ -8,6 +8,7 @@ User = get_user_model()
 class Article(models.Model):
     user = models.ForeignKey(User,
                              verbose_name=_('user'),
+                             related_name='articles',
                              on_delete=models.CASCADE)
     title = models.CharField(_('title'), max_length=200, default='untitled')
     content = models.TextField(_('content'), blank=True)
@@ -30,9 +31,11 @@ class Article(models.Model):
 class ArticleComment(models.Model):
     article = models.ForeignKey(Article,
                                 verbose_name=_('article'),
+                                related_name='comments',
                                 on_delete=models.CASCADE)
     user = models.ForeignKey(User,
                              verbose_name=_('user'),
+                             related_name='comments',
                              on_delete=models.CASCADE)
     content = models.TextField(_('content'), max_length=400)
     created_time = models.DateTimeField(_('created time'), auto_now_add=True)
@@ -50,9 +53,11 @@ class ArticleComment(models.Model):
 class ArticleVote(models.Model):
     user = models.ForeignKey(User,
                              verbose_name=_('user'),
+                             related_name='votes',
                              on_delete=models.CASCADE)
     article = models.ForeignKey(Article,
                                 verbose_name=_('article'),
+                                related_name='votes',
                                 on_delete=models.CASCADE)
     value = models.IntegerField(_('value'), default=0)
     created_time = models.DateTimeField(_('created time'), auto_now_add=True)
@@ -70,6 +75,7 @@ class ArticleImage(models.Model):
     name = models.CharField(_('name'), max_length=200, blank=True)
     article = models.ForeignKey(Article,
                                 verbose_name=_('article'),
+                                related_name='images',
                                 on_delete=models.CASCADE)
     image = models.ImageField(_('image'),
                               upload_to='articles/images',

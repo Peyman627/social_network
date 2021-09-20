@@ -5,21 +5,21 @@ from .models import (Article, ArticleComment, ArticleTag, ArticleVote,
 from profiles.serializer_fields import UserHyperlinkedRelatedField
 
 
-class ArticleSerializer(serializers.HyperlinkedModelSerializer):
+class ArticleSerializer(serializers.ModelSerializer):
     url = serializers.HyperlinkedIdentityField(
         view_name='articles:article_detail',
         lookup_url_kwarg='article_id',
     )
     user = UserHyperlinkedRelatedField(read_only=True)
-    tags = serializers.SlugRelatedField(many=True,
-                                        queryset=ArticleTag.objects.all(),
+    tags = serializers.SlugRelatedField(queryset=ArticleTag.objects.all(),
+                                        many=True,
                                         slug_field='name')
 
     class Meta:
         model = Article
         fields = [
-            'url', 'user', 'title', 'content', 'tags', 'created_time',
-            'updated_time'
+            'url', 'user', 'title', 'content', 'images', 'tags', 'comments',
+            'votes', 'created_time', 'updated_time'
         ]
 
 
