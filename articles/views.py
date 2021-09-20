@@ -2,8 +2,9 @@ from rest_framework import generics
 
 from .models import (Article, ArticleComment, ArticleVote, ArticleTag,
                      ArticleImage)
-from .serializers import (ArticleSerializer, ArticleCommentSerializer,
-                          ArticleVoteSerializer, ArticleTagSerializer)
+from .serializers import (ArticleImageSerializer, ArticleSerializer,
+                          ArticleCommentSerializer, ArticleVoteSerializer,
+                          ArticleTagSerializer)
 
 
 class ArticleListView(generics.ListCreateAPIView):
@@ -39,3 +40,25 @@ class ArticleCommentDetailView(generics.RetrieveUpdateDestroyAPIView):
         article_id = self.kwargs.get('article_id')
         comment_id = self.kwargs.get('comment_id')
         return ArticleComment.objects.get(id=comment_id, article=article_id)
+
+
+class ArticleImageListView(generics.ListCreateAPIView):
+    queryset = ArticleImage.objects.all()
+    serializer_class = ArticleImageSerializer
+    permission_classes = []
+
+    def get_queryset(self):
+        article_id = self.kwargs.get('article_id')
+        return ArticleImage.objects.filter(
+            article=article_id).order_by('-created_time')
+
+
+class ArticleImageDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ArticleImage.objects.all()
+    serializer_class = ArticleImageSerializer
+    permission_classes = []
+
+    def get_object(self):
+        article_id = self.kwargs.get('article_id')
+        image_id = self.kwargs.get('image_id')
+        return ArticleImage.objects.get(id=image_id, article=article_id)

@@ -14,4 +14,10 @@ urlpatterns = [
     path('<int:article_id>/comments/<int:comment_id>/',
          views.ArticleCommentDetailView.as_view(),
          name='comment_detail'),
+    path('<int:article_id>/images/',
+         views.ArticleImageListView.as_view(),
+         name='image_list'),
+    path('<int:article_id>/images/<int:image_id>/',
+         views.ArticleImageDetailView.as_view(),
+         name='image_detail'),
 ]

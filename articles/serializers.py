@@ -16,6 +16,7 @@ class ArticleSerializer(serializers.ModelSerializer):
                                         many=True,
                                         slug_field='name')
     comments = serializers.SerializerMethodField(read_only=True)
+    images = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = Article
@@ -27,6 +28,12 @@ class ArticleSerializer(serializers.ModelSerializer):
     def get_comments(self, obj):
         request = self.context.get('request')
         return reverse(viewname='articles:comment_list',
+                       args=[obj.id],
+                       request=request)
+
+    def get_images(self, obj):
+        request = self.context.get('request')
+        return reverse(viewname='articles:image_list',
                        args=[obj.id],
                        request=request)
 
@@ -50,6 +57,11 @@ class ArticleVoteSerializer(serializers.ModelSerializer):
 
 
 class ArticleImageSerializer(serializers.ModelSerializer):
+    article = serializers.HyperlinkedRelatedField(
+        view_name='articles:article_detail',
+        lookup_url_kwarg='article_id',
+        read_only=True)
+
     class Meta:
         model = ArticleImage
         fields = ['name', 'article', 'image', 'created_time']
