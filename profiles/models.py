@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, post_delete
 
 User = get_user_model()
 
@@ -57,4 +57,9 @@ def user_did_save(sender, instance, created, *args, **kwargs):
         Profile.objects.get_or_create(user=instance)
 
 
+def profile_got_delete(sender, instance, *args, **kwargs):
+    instance.user.delete()
+
+
 post_save.connect(user_did_save, sender=User)
+post_delete.connect(profile_got_delete, sender=Profile)
