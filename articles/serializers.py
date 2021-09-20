@@ -21,12 +21,13 @@ class ArticleSerializer(serializers.ModelSerializer):
     comments = serializers.SerializerMethodField(read_only=True)
     images = serializers.SerializerMethodField(read_only=True)
     votes = serializers.SerializerMethodField(read_only=True)
+    votes_average = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = Article
         fields = [
             'url', 'user', 'title', 'content', 'images', 'comments', 'votes',
-            'tags', 'created_time', 'updated_time'
+            'votes_average', 'tags', 'created_time', 'updated_time'
         ]
 
     def get_comments(self, obj):
@@ -46,6 +47,13 @@ class ArticleSerializer(serializers.ModelSerializer):
         return reverse(viewname='articles:vote_list',
                        args=[obj.id],
                        request=request)
+
+    def get_votes_average(self, obj):
+        votes_count = obj.votes.count()
+        if votes_count != 0:
+            votes_total = sum([vote.value for vote in obj.votes.all()])
+            return votes_total / votes_count
+        return 0
 
 
 class ArticleCommentSerializer(serializers.HyperlinkedModelSerializer):

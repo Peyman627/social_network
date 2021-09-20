@@ -69,6 +69,7 @@ class ArticleVote(models.Model):
         db_table = 'article_vote'
         verbose_name = _('article vote')
         verbose_name_plural = _('article votes')
+        unique_together = ('user', 'article')
 
 
 class ArticleImage(models.Model):
