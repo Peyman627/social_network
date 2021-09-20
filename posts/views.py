@@ -11,7 +11,6 @@ from profiles.permissions import IsOwnerOrReadOnly
 
 
 class PostListView(generics.ListCreateAPIView):
-    queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
 
@@ -32,7 +31,6 @@ class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 
 class PostListDiscoverView(generics.ListAPIView):
-    queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
 
@@ -41,7 +39,6 @@ class PostListDiscoverView(generics.ListAPIView):
 
 
 class PostFeedView(generics.ListAPIView):
-    queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
 
@@ -66,7 +63,6 @@ class PostLikeView(APIView):
 
 
 class PostLikeListView(generics.ListAPIView):
-    queryset = PostLike.objects.all()
     serializer_class = PostLikeSerializer
     permission_classes = [IsAuthenticated]
 

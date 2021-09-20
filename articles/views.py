@@ -12,12 +12,20 @@ from profiles.permissions import IsOwnerOrReadOnly, IsAdminUserOrReadOnly
 
 
 class ArticleListView(generics.ListCreateAPIView):
-    queryset = Article.objects.all()
     serializer_class = ArticleSerializer
     permission_classes = [IsAuthenticated]
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+    def get_queryset(self):
+        queryset = Article.objects.all()
+        tag_name = self.request.query_params.get('tag')
+        if tag_name is not None:
+            tag = get_object_or_404(ArticleTag, name=tag_name)
+            queryset = queryset.filter(tags__in=[tag])
+
+        return queryset
 
 
 class ArticleDetailView(generics.RetrieveUpdateDestroyAPIView):

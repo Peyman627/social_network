@@ -15,7 +15,6 @@ User = get_user_model()
 
 
 class ProfileListView(generics.ListAPIView):
-    queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
     permission_classes = [IsAuthenticated]
 
@@ -47,7 +46,6 @@ class ProfileFollowView(APIView):
 
 
 class FollowerRelationListView(generics.ListAPIView):
-    queryset = FollowRelation.objects.all()
     serializer_class = FollowerRelationSerializer
     permission_classes = [IsAuthenticated]
 
@@ -69,7 +67,6 @@ class FollowerRelationDetailView(generics.RetrieveDestroyAPIView):
 
 
 class FollowingRelationListView(generics.ListAPIView):
-    queryset = FollowRelation.objects.all()
     serializer_class = FollowingRelationSerializer
     permission_classes = [IsAuthenticated]
 
