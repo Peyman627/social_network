@@ -16,6 +16,7 @@ class Article(models.Model):
                                   related_name='article_tags',
                                   blank=True)
     created_time = models.DateTimeField(_('created time'), auto_now_add=True)
+    updated_time = models.DateTimeField(_('updated time'), auto_now=True)
 
     def __str__(self):
         return self.title
@@ -35,6 +36,7 @@ class ArticleComment(models.Model):
                              on_delete=models.CASCADE)
     content = models.TextField(_('content'), max_length=400)
     created_time = models.DateTimeField(_('created time'), auto_now_add=True)
+    updated_time = models.DateTimeField(_('updated time'), auto_now=True)
 
     def __str__(self):
         return f'{self.user.username} - {self.content}'
@@ -73,6 +75,7 @@ class ArticleImage(models.Model):
                               upload_to='articles/images',
                               blank=True,
                               null=True)
+    created_time = models.DateTimeField(_('created time'), auto_now_add=True)
 
     def __str__(self):
         return f'{self.name} - {self.article}'
