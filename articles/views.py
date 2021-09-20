@@ -84,3 +84,15 @@ class ArticleVoteDetailView(generics.RetrieveUpdateDestroyAPIView):
         article_id = self.kwargs.get('article_id')
         vote_id = self.kwargs.get('vote_id')
         return ArticleVote.objects.get(id=vote_id, article=article_id)
+
+
+class ArticleTagListView(generics.ListCreateAPIView):
+    queryset = ArticleTag.objects.all()
+    serializer_class = ArticleTagSerializer
+    permission_classes = []
+
+
+class ArticleTagDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ArticleTag.objects.all()
+    serializer_class = ArticleTagSerializer
+    permission_classes = []

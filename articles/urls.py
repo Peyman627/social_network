@@ -26,4 +26,8 @@ urlpatterns = [
     path('<int:article_id>/votes/<int:vote_id>/',
          views.ArticleVoteDetailView.as_view(),
          name='vote_detail'),
+    path('tags/', views.ArticleTagListView.as_view(), name='tag_list'),
+    path('tags/<int:tag_id>/',
+         views.ArticleTagDetailView.as_view(),
+         name='tag_detail'),
 ]
