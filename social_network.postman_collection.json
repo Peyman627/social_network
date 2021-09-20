@@ -4332,6 +4332,3408 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "articles",
+			"item": [
+				{
+					"name": "articles:article_list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:article_list example(filtering)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/?tag=gaming",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										""
+									],
+									"query": [
+										{
+											"key": "tag",
+											"value": "gaming"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 10:54:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "507"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/articles/2/\",\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"title\": \"why gaming?\",\n            \"content\": \"gaming is good for your body\",\n            \"images\": \"http://localhost:8000/articles/2/images/\",\n            \"comments\": \"http://localhost:8000/articles/2/comments/\",\n            \"votes\": \"http://localhost:8000/articles/2/votes/\",\n            \"votes_average\": 9,\n            \"tags\": [\n                \"gaming\",\n                \"general\"\n            ],\n            \"created_time\": \"2021-09-20T08:16:07.892118+04:30\",\n            \"updated_time\": \"2021-09-20T08:38:01.257576+04:30\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "articles:article_list example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 10:54:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1830"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 4,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/articles/1/\",\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"title\": \"first article ever\",\n            \"content\": \"crypto is the next big thingy\",\n            \"images\": \"http://localhost:8000/articles/1/images/\",\n            \"comments\": \"http://localhost:8000/articles/1/comments/\",\n            \"votes\": \"http://localhost:8000/articles/1/votes/\",\n            \"votes_average\": 0,\n            \"tags\": [\n                \"general\"\n            ],\n            \"created_time\": \"2021-09-20T08:15:34.107886+04:30\",\n            \"updated_time\": \"2021-09-20T12:43:25.878485+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/articles/2/\",\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"title\": \"why gaming?\",\n            \"content\": \"gaming is good for your body\",\n            \"images\": \"http://localhost:8000/articles/2/images/\",\n            \"comments\": \"http://localhost:8000/articles/2/comments/\",\n            \"votes\": \"http://localhost:8000/articles/2/votes/\",\n            \"votes_average\": 9,\n            \"tags\": [\n                \"gaming\",\n                \"general\"\n            ],\n            \"created_time\": \"2021-09-20T08:16:07.892118+04:30\",\n            \"updated_time\": \"2021-09-20T08:38:01.257576+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/articles/3/\",\n            \"user\": \"http://localhost:8000/profiles/7/\",\n            \"title\": \"untitled\",\n            \"content\": \"here you go, an article\",\n            \"images\": \"http://localhost:8000/articles/3/images/\",\n            \"comments\": \"http://localhost:8000/articles/3/comments/\",\n            \"votes\": \"http://localhost:8000/articles/3/votes/\",\n            \"votes_average\": 0,\n            \"tags\": [],\n            \"created_time\": \"2021-09-20T08:44:25.473156+04:30\",\n            \"updated_time\": \"2021-09-20T08:44:25.473188+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/articles/4/\",\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"title\": \"Another One\",\n            \"content\": \"Another day in paradise\",\n            \"images\": \"http://localhost:8000/articles/4/images/\",\n            \"comments\": \"http://localhost:8000/articles/4/comments/\",\n            \"votes\": \"http://localhost:8000/articles/4/votes/\",\n            \"votes_average\": 4,\n            \"tags\": [\n                \"general\"\n            ],\n            \"created_time\": \"2021-09-20T12:42:45.720273+04:30\",\n            \"updated_time\": \"2021-09-20T12:42:45.720312+04:30\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:article_list(create)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Is coding actually lame?",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "No, think again my child, don't be fooled by the title it's not.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/articles/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:article_list(create) example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Is coding actually lame?",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "No, think again my child, don't be fooled by the title it's not.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/articles/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 10:57:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Location",
+									"value": "http://localhost:8000/articles/5/"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "484"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/5/\",\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"title\": \"Is coding actually lame?\",\n    \"content\": \"No, think again my child, don't be fooled by the title it's not.\",\n    \"images\": \"http://localhost:8000/articles/5/images/\",\n    \"comments\": \"http://localhost:8000/articles/5/comments/\",\n    \"votes\": \"http://localhost:8000/articles/5/votes/\",\n    \"votes_average\": 0,\n    \"tags\": [],\n    \"created_time\": \"2021-09-20T15:27:04.706142+04:30\",\n    \"updated_time\": \"2021-09-20T15:27:04.706171+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:article_detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:article_detail example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 10:57:31 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "452"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/1/\",\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"title\": \"first article ever\",\n    \"content\": \"crypto is the next big thingy\",\n    \"images\": \"http://localhost:8000/articles/1/images/\",\n    \"comments\": \"http://localhost:8000/articles/1/comments/\",\n    \"votes\": \"http://localhost:8000/articles/1/votes/\",\n    \"votes_average\": 0,\n    \"tags\": [\n        \"general\"\n    ],\n    \"created_time\": \"2021-09-20T08:15:34.107886+04:30\",\n    \"updated_time\": \"2021-09-20T12:43:25.878485+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:article_detail(partial_update)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "crypto is the future",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:article_detail(partial_update)",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "content",
+											"value": "crypto is the future",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:01:21 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "443"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/1/\",\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"title\": \"first article ever\",\n    \"content\": \"crypto is the future\",\n    \"images\": \"http://localhost:8000/articles/1/images/\",\n    \"comments\": \"http://localhost:8000/articles/1/comments/\",\n    \"votes\": \"http://localhost:8000/articles/1/votes/\",\n    \"votes_average\": 0,\n    \"tags\": [\n        \"general\"\n    ],\n    \"created_time\": \"2021-09-20T08:15:34.107886+04:30\",\n    \"updated_time\": \"2021-09-20T15:31:21.314616+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:article_detail(update)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"first and best article ever\",\n    \"content\": \"crypto is the future baby\",\n    \"tags\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:article_detail(update) example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"first and best article ever\",\n    \"content\": \"crypto is the future baby\",\n    \"tags\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:03:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "448"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/1/\",\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"title\": \"first and best article ever\",\n    \"content\": \"crypto is the future baby\",\n    \"images\": \"http://localhost:8000/articles/1/images/\",\n    \"comments\": \"http://localhost:8000/articles/1/comments/\",\n    \"votes\": \"http://localhost:8000/articles/1/votes/\",\n    \"votes_average\": 0,\n    \"tags\": [],\n    \"created_time\": \"2021-09-20T08:15:34.107886+04:30\",\n    \"updated_time\": \"2021-09-20T15:33:26.861660+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:article_detail(destroy)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:article_detail(destroy) example(only the owner can delete)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:04:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"You do not have permission to perform this action.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:comment_list(create)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "fresh new content from the cyrus the great",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/comments/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"comments",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:comment_list(create) example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "content",
+											"value": "fresh new content from the cyrus the great",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/comments/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"comments",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:06:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Location",
+									"value": "http://localhost:8000/articles/2/comments/5/"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "298"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/2/comments/5/\",\n    \"article\": \"http://localhost:8000/articles/2/\",\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"content\": \"fresh new content from the cyrus the great\",\n    \"created_time\": \"2021-09-20T15:36:19.773238+04:30\",\n    \"updated_time\": \"2021-09-20T15:36:19.773278+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:comment_detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/comments/:comment_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"comments",
+								":comment_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								},
+								{
+									"key": "comment_id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:comment_detail example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/comments/:comment_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"comments",
+										":comment_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "2"
+										},
+										{
+											"key": "comment_id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:06:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "298"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/2/comments/5/\",\n    \"article\": \"http://localhost:8000/articles/2/\",\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"content\": \"fresh new content from the cyrus the great\",\n    \"created_time\": \"2021-09-20T15:36:19.773238+04:30\",\n    \"updated_time\": \"2021-09-20T15:36:19.773278+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:comment_detail(partial_update)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "what a game",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/comments/:comment_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"comments",
+								":comment_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								},
+								{
+									"key": "comment_id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:comment_detail(partial_update) example",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "content",
+											"value": "what a game",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/comments/:comment_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"comments",
+										":comment_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "2"
+										},
+										{
+											"key": "comment_id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:07:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "267"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/2/comments/5/\",\n    \"article\": \"http://localhost:8000/articles/2/\",\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"content\": \"what a game\",\n    \"created_time\": \"2021-09-20T15:36:19.773238+04:30\",\n    \"updated_time\": \"2021-09-20T15:37:37.621230+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:comment_detail(update)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "paris is a trash team",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/comments/:comment_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"comments",
+								":comment_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								},
+								{
+									"key": "comment_id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:comment_detail(update) example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "content",
+											"value": "paris is a trash team",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/comments/:comment_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"comments",
+										":comment_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "2"
+										},
+										{
+											"key": "comment_id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:08:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "277"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/2/comments/5/\",\n    \"article\": \"http://localhost:8000/articles/2/\",\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"content\": \"paris is a trash team\",\n    \"created_time\": \"2021-09-20T15:36:19.773238+04:30\",\n    \"updated_time\": \"2021-09-20T15:38:24.688667+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:comment_detail(destory)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/comments/:comment_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"comments",
+								":comment_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								},
+								{
+									"key": "comment_id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:comment_detail(destory) example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/comments/:comment_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"comments",
+										":comment_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "2"
+										},
+										{
+											"key": "comment_id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:08:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "articles:comment_list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/comments/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"comments",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:comment_list example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/comments/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"comments",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:09:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "598"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 2,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/articles/2/comments/2/\",\n            \"article\": \"http://localhost:8000/articles/2/\",\n            \"user\": \"http://localhost:8000/profiles/5/\",\n            \"content\": \"LoL is trash\",\n            \"created_time\": \"2021-09-20T08:37:17.656520+04:30\",\n            \"updated_time\": \"2021-09-20T08:37:17.656587+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/articles/2/comments/1/\",\n            \"article\": \"http://localhost:8000/articles/2/\",\n            \"user\": \"http://localhost:8000/profiles/2/\",\n            \"content\": \"dota is the best game\",\n            \"created_time\": \"2021-09-20T08:36:59.810226+04:30\",\n            \"updated_time\": \"2021-09-20T08:36:59.810259+04:30\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:image_list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/images/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"images",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:image_list example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/images/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"images",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:12:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "782"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 3,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/articles/2/images/3/\",\n            \"name\": \"dota 2 razor\",\n            \"article\": \"http://localhost:8000/articles/2/\",\n            \"image\": \"http://localhost:8000/media/articles/images/oai5.0.jpg\",\n            \"created_time\": \"2021-09-20T08:36:43.047825+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/articles/2/images/2/\",\n            \"name\": \"dota 2 ravage\",\n            \"article\": \"http://localhost:8000/articles/2/\",\n            \"image\": \"http://localhost:8000/media/articles/images/MRwCanXyDW6SkpdyNdFiSa.jpg\",\n            \"created_time\": \"2021-09-20T08:36:19.451372+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/articles/2/images/1/\",\n            \"name\": \"dota 2 fountain\",\n            \"article\": \"http://localhost:8000/articles/2/\",\n            \"image\": \"http://localhost:8000/media/articles/images/download.jpeg\",\n            \"created_time\": \"2021-09-20T08:35:55.903940+04:30\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:image_list(create)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/images/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"images",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "articles:image_detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/images/:image_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"images",
+								":image_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								},
+								{
+									"key": "image_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:image_detail example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/images/:image_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"images",
+										":image_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "2"
+										},
+										{
+											"key": "image_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:14:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "235"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/2/images/3/\",\n    \"name\": \"dota 2 razor\",\n    \"article\": \"http://localhost:8000/articles/2/\",\n    \"image\": \"http://localhost:8000/media/articles/images/oai5.0.jpg\",\n    \"created_time\": \"2021-09-20T08:36:43.047825+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:image_detail(partial_update)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "razor dota 2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/images/:image_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"images",
+								":image_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								},
+								{
+									"key": "image_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:image_detail(partial_update) example",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "razor dota 2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/images/:image_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"images",
+										":image_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "2"
+										},
+										{
+											"key": "image_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:14:52 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "235"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/2/images/3/\",\n    \"name\": \"razor dota 2\",\n    \"article\": \"http://localhost:8000/articles/2/\",\n    \"image\": \"http://localhost:8000/media/articles/images/oai5.0.jpg\",\n    \"created_time\": \"2021-09-20T08:36:43.047825+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:image_detail(update)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/images/:image_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"images",
+								":image_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								},
+								{
+									"key": "image_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "articles:image_detail(destroy)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/images/:image_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"images",
+								":image_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								},
+								{
+									"key": "image_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:image_detail(destroy) example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/images/:image_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"images",
+										":image_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "2"
+										},
+										{
+											"key": "image_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:15:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "articles:vote_list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/votes/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"votes",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:vote_list example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/votes/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"votes",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:17:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "454"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 2,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/articles/2/votes/4/\",\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"article\": \"http://localhost:8000/articles/2/\",\n            \"value\": 8,\n            \"created_time\": \"2021-09-20T12:41:16.191567+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/articles/2/votes/2/\",\n            \"user\": \"http://localhost:8000/profiles/2/\",\n            \"article\": \"http://localhost:8000/articles/2/\",\n            \"value\": 10,\n            \"created_time\": \"2021-09-20T10:52:34.961143+04:30\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:vote_detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/votes/:vote_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"votes",
+								":vote_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								},
+								{
+									"key": "vote_id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:vote_detail example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/votes/:vote_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"votes",
+										":vote_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "2"
+										},
+										{
+											"key": "vote_id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:16:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "200"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/2/votes/4/\",\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"article\": \"http://localhost:8000/articles/2/\",\n    \"value\": 8,\n    \"created_time\": \"2021-09-20T12:41:16.191567+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:vote_detail(destroy)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/votes/:vote_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"votes",
+								":vote_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "3"
+								},
+								{
+									"key": "vote_id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:vote_detail(destroy) example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/votes/:vote_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"votes",
+										":vote_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "3"
+										},
+										{
+											"key": "vote_id",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:20:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "articles:vote_detail(update)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "value",
+									"value": "7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/votes/:vote_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"votes",
+								":vote_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								},
+								{
+									"key": "vote_id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:vote_detail(update) example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "value",
+											"value": "7",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/votes/:vote_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"votes",
+										":vote_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "2"
+										},
+										{
+											"key": "vote_id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:21:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "200"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/2/votes/4/\",\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"article\": \"http://localhost:8000/articles/2/\",\n    \"value\": 7,\n    \"created_time\": \"2021-09-20T12:41:16.191567+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:vote_detail(partial_update)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "value",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/votes/:vote_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"votes",
+								":vote_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "2"
+								},
+								{
+									"key": "vote_id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:vote_detail(partial_update) example",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "value",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/votes/:vote_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"votes",
+										":vote_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "2"
+										},
+										{
+											"key": "vote_id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:21:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "200"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/2/votes/4/\",\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"article\": \"http://localhost:8000/articles/2/\",\n    \"value\": 2,\n    \"created_time\": \"2021-09-20T12:41:16.191567+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:vote_list(create)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "value",
+									"value": "6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/articles/:article_id/votes/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								":article_id",
+								"votes",
+								""
+							],
+							"variable": [
+								{
+									"key": "article_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:vote_list(create) example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "value",
+											"value": "6",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/articles/:article_id/votes/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										":article_id",
+										"votes",
+										""
+									],
+									"variable": [
+										{
+											"key": "article_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:19:25 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Location",
+									"value": "http://localhost:8000/articles/3/votes/10/"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/3/votes/10/\",\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"article\": \"http://localhost:8000/articles/3/\",\n    \"value\": 6,\n    \"created_time\": \"2021-09-20T15:49:25.521579+04:30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:tag_list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/tags/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								"tags",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:tag_list example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/tags/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										"tags",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:22:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "182"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 2,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/articles/tags/1/\",\n            \"name\": \"gaming\"\n        },\n        {\n            \"url\": \"http://localhost:8000/articles/tags/2/\",\n            \"name\": \"general\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:tag_detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/tags/:tag_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								"tags",
+								":tag_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "tag_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:tag_detail example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/tags/:tag_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										"tags",
+										":tag_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "tag_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:22:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/tags/1/\",\n    \"name\": \"gaming\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:tag_detail(destroy)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/articles/tags/:tag_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								"tags",
+								":tag_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "tag_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:tag_detail(destroy) example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/articles/tags/:tag_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										"tags",
+										":tag_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "tag_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:24:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "articles:tag_detail(update)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "coding2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/articles/tags/:tag_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								"tags",
+								":tag_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "tag_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:tag_detail(update) example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "coding2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/articles/tags/:tag_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										"tags",
+										":tag_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "tag_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:23:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/tags/3/\",\n    \"name\": \"coding2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:tag_detail(partial_update)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "coding3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/articles/tags/:tag_id/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								"tags",
+								":tag_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "tag_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:tag_detail(partial_update) example",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "coding3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/articles/tags/:tag_id/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										"tags",
+										":tag_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "tag_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:24:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/tags/3/\",\n    \"name\": \"coding3\"\n}"
+						}
+					]
+				},
+				{
+					"name": "articles:tag_list(create)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "coding",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}/articles/tags/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"articles",
+								"tags",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "articles:tag_list(create) example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "coding",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}/articles/tags/",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"articles",
+										"tags",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 20 Sep 2021 11:22:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Location",
+									"value": "http://localhost:8000/articles/tags/3/"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"http://localhost:8000/articles/tags/3/\",\n    \"name\": \"coding\"\n}"
+						}
+					]
+				}
+			]
 		}
 	],
 	"event": [
@@ -4361,11 +7763,11 @@
 		},
 		{
 			"key": "refresh_token",
-			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzMjEwNjQ3MywianRpIjoiNzEzNjM4ODcyNDdlNGZlNTljOTNmZTYzMGU0ODNkNDMiLCJ1c2VyX2lkIjoxfQ.7E6qXf0cJXggyV1y_oQSBhW-bzI124KVx-4gWpmAFGE"
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzMjIxMTQ2MywianRpIjoiNDg4ODcxNTgxZjNjNDE0MGIwYmJjYjkzMmUxODMwMjciLCJ1c2VyX2lkIjoxfQ.LVmprWuEAC9Rsl3WWGffKzltCIzJ3QWXf7tvvaVK5wc"
 		},
 		{
 			"key": "access_token",
-			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMyMDY0MTg3LCJqdGkiOiI2MTU4OTI1ZWJhMDU0YmU5YjYxZDUzMTRiYWIwNzk2ZSIsInVzZXJfaWQiOjF9.nuBEs7zExFV-C1q3exICDb_Pfb4wHHWYy-6rH002_dw"
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMyMTM3NTk3LCJqdGkiOiI5ZjNhMGFmMTdhYzE0NjcwOTk0NWQwYzRkZDQ2NTI0NCIsInVzZXJfaWQiOjF9.iNE-KN5Bb9JNR83ZIP7h_WNaKmu1sAPf9K5wgtipOBg"
 		}
 	]
 }
