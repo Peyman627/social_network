@@ -1484,7 +1484,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sun, 19 Sep 2021 13:44:29 GMT"
+									"value": "Mon, 20 Sep 2021 11:43:27 GMT"
 								},
 								{
 									"key": "Server",
@@ -1508,7 +1508,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "2777"
+									"value": "3138"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -1520,7 +1520,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"count\": 7,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"user\": {\n                \"username\": \"blackviking434\",\n                \"email\": \"blackviking434@gmail.com\",\n                \"phone\": \"+989372632989\",\n                \"created_time\": \"2021-09-19T17:31:20.047361+04:30\",\n                \"updated_time\": \"2021-09-19T17:31:41.870593+04:30\"\n            },\n            \"name\": \"matin nazari\",\n            \"bio\": \"I know no time management\",\n            \"followers_count\": 0,\n            \"followings_count\": 0,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-19T17:31:20.049198+04:30\",\n            \"updated_time\": \"2021-09-19T17:32:42.548671+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"Tistonedide\",\n                \"email\": \"EileenKHawthorne@teleworm.us\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-19T17:30:36.510723+04:30\",\n                \"updated_time\": \"2021-09-19T17:30:38.826077+04:30\"\n            },\n            \"name\": \"\",\n            \"bio\": \"\",\n            \"followers_count\": 0,\n            \"followings_count\": 0,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-19T17:30:36.512653+04:30\",\n            \"updated_time\": \"2021-09-19T17:30:36.512681+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"Coing1989\",\n                \"email\": \"MaggieCDupree@rhyta.com\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-19T17:29:57.414350+04:30\",\n                \"updated_time\": \"2021-09-19T17:30:17.547026+04:30\"\n            },\n            \"name\": \"\",\n            \"bio\": \"\",\n            \"followers_count\": 2,\n            \"followings_count\": 1,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-19T17:29:57.416093+04:30\",\n            \"updated_time\": \"2021-09-19T17:29:57.416135+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"Himag1994\",\n                \"email\": \"HowardLSmith@armyspy.com\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-19T17:29:07.967899+04:30\",\n                \"updated_time\": \"2021-09-19T17:29:26.744118+04:30\"\n            },\n            \"name\": \"\",\n            \"bio\": \"\",\n            \"followers_count\": 1,\n            \"followings_count\": 1,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-19T17:29:07.969521+04:30\",\n            \"updated_time\": \"2021-09-19T17:29:07.969543+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"blackviking628\",\n                \"email\": \"blackviking628@gmail.com\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-18T16:54:14.349438+04:30\",\n                \"updated_time\": \"2021-09-18T16:54:19.638521+04:30\"\n            },\n            \"name\": \"leila\",\n            \"bio\": \"super chill girl\",\n            \"followers_count\": 0,\n            \"followings_count\": 3,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-18T16:54:14.351360+04:30\",\n            \"updated_time\": \"2021-09-18T16:55:00.308795+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"peyman628\",\n                \"email\": \"hassani.peyman628@gmail.com\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-18T16:53:52.392114+04:30\",\n                \"updated_time\": \"2021-09-18T16:53:56.419526+04:30\"\n            },\n            \"name\": \"peyman hassani\",\n            \"bio\": \"second account I made\",\n            \"followers_count\": 1,\n            \"followings_count\": 1,\n            \"following_status\": true,\n            \"created_time\": \"2021-09-18T16:53:52.393778+04:30\",\n            \"updated_time\": \"2021-09-18T16:56:30.760607+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"peyman627\",\n                \"email\": \"hassani.peyman627@gmail.com\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-18T16:53:18.788978+04:30\",\n                \"updated_time\": \"2021-09-18T16:53:18.811334+04:30\"\n            },\n            \"name\": \"peyman hassani\",\n            \"bio\": \"admin's profile Pog\",\n            \"followers_count\": 3,\n            \"followings_count\": 1,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-18T16:53:18.806226+04:30\",\n            \"updated_time\": \"2021-09-18T16:55:45.191218+04:30\"\n        }\n    ]\n}"
+							"body": "{\n    \"count\": 6,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"user\": {\n                \"username\": \"blackviking434\",\n                \"email\": \"blackviking434@gmail.com\",\n                \"phone\": \"+989372632989\",\n                \"created_time\": \"2021-09-19T17:31:20.047361+04:30\",\n                \"updated_time\": \"2021-09-19T17:31:41.870593+04:30\"\n            },\n            \"name\": \"matin nazari\",\n            \"bio\": \"I know no time management\",\n            \"followers\": \"http://localhost:8000/profiles/7/followers/\",\n            \"followings\": \"http://localhost:8000/profiles/7/followings/\",\n            \"followers_count\": 0,\n            \"followings_count\": 0,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-19T17:31:20.049198+04:30\",\n            \"updated_time\": \"2021-09-19T17:32:42.548671+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"Tistonedide\",\n                \"email\": \"EileenKHawthorne@teleworm.us\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-19T17:30:36.510723+04:30\",\n                \"updated_time\": \"2021-09-19T17:30:38.826077+04:30\"\n            },\n            \"name\": \"\",\n            \"bio\": \"\",\n            \"followers\": \"http://localhost:8000/profiles/6/followers/\",\n            \"followings\": \"http://localhost:8000/profiles/6/followings/\",\n            \"followers_count\": 2,\n            \"followings_count\": 0,\n            \"following_status\": true,\n            \"created_time\": \"2021-09-19T17:30:36.512653+04:30\",\n            \"updated_time\": \"2021-09-19T17:30:36.512681+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"Coing1989\",\n                \"email\": \"MaggieCDupree@rhyta.com\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-19T17:29:57.414350+04:30\",\n                \"updated_time\": \"2021-09-19T18:57:22.021774+04:30\"\n            },\n            \"name\": \"\",\n            \"bio\": \"\",\n            \"followers\": \"http://localhost:8000/profiles/5/followers/\",\n            \"followings\": \"http://localhost:8000/profiles/5/followings/\",\n            \"followers_count\": 1,\n            \"followings_count\": 1,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-19T17:29:57.416093+04:30\",\n            \"updated_time\": \"2021-09-19T17:29:57.416135+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"blackviking628\",\n                \"email\": \"blackviking628@gmail.com\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-18T16:54:14.349438+04:30\",\n                \"updated_time\": \"2021-09-18T16:54:19.638521+04:30\"\n            },\n            \"name\": \"leila\",\n            \"bio\": \"super chill girl\",\n            \"followers\": \"http://localhost:8000/profiles/3/followers/\",\n            \"followings\": \"http://localhost:8000/profiles/3/followings/\",\n            \"followers_count\": 0,\n            \"followings_count\": 1,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-18T16:54:14.351360+04:30\",\n            \"updated_time\": \"2021-09-18T16:55:00.308795+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"peyman628\",\n                \"email\": \"hassani.peyman628@gmail.com\",\n                \"phone\": null,\n                \"created_time\": \"2021-09-18T16:53:52.392114+04:30\",\n                \"updated_time\": \"2021-09-18T16:53:56.419526+04:30\"\n            },\n            \"name\": \"peyman hassani\",\n            \"bio\": \"second account I made\",\n            \"followers\": \"http://localhost:8000/profiles/2/followers/\",\n            \"followings\": \"http://localhost:8000/profiles/2/followings/\",\n            \"followers_count\": 1,\n            \"followings_count\": 2,\n            \"following_status\": true,\n            \"created_time\": \"2021-09-18T16:53:52.393778+04:30\",\n            \"updated_time\": \"2021-09-18T16:56:30.760607+04:30\"\n        },\n        {\n            \"user\": {\n                \"username\": \"peyman627\",\n                \"email\": \"hassani.peyman627@gmail.com\",\n                \"phone\": \"+98050832772\",\n                \"created_time\": \"2021-09-18T16:53:18.788978+04:30\",\n                \"updated_time\": \"2021-09-19T18:28:39.244891+04:30\"\n            },\n            \"name\": \"peyman hassani\",\n            \"bio\": \"I don't know, doge to the moon\",\n            \"followers\": \"http://localhost:8000/profiles/1/followers/\",\n            \"followings\": \"http://localhost:8000/profiles/1/followings/\",\n            \"followers_count\": 2,\n            \"followings_count\": 2,\n            \"following_status\": false,\n            \"created_time\": \"2021-09-18T16:53:18.806226+04:30\",\n            \"updated_time\": \"2021-09-19T18:28:39.240499+04:30\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -1559,7 +1559,7 @@
 					},
 					"response": [
 						{
-							"name": "profiles:profile_detail example",
+							"name": "profiles:profile_detail(retrieve) example",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -1587,7 +1587,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sun, 19 Sep 2021 13:47:05 GMT"
+									"value": "Mon, 20 Sep 2021 11:43:52 GMT"
 								},
 								{
 									"key": "Server",
@@ -1611,7 +1611,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "402"
+									"value": "541"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -1623,7 +1623,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"user\": {\n        \"username\": \"peyman627\",\n        \"email\": \"hassani.peyman627@gmail.com\",\n        \"phone\": null,\n        \"created_time\": \"2021-09-18T16:53:18.788978+04:30\",\n        \"updated_time\": \"2021-09-18T16:53:18.811334+04:30\"\n    },\n    \"name\": \"peyman hassani\",\n    \"bio\": \"admin's profile Pog\",\n    \"followers_count\": 3,\n    \"followings_count\": 1,\n    \"following_status\": false,\n    \"created_time\": \"2021-09-18T16:53:18.806226+04:30\",\n    \"updated_time\": \"2021-09-18T16:55:45.191218+04:30\"\n}"
+							"body": "{\n    \"user\": {\n        \"username\": \"peyman627\",\n        \"email\": \"hassani.peyman627@gmail.com\",\n        \"phone\": \"+98050832772\",\n        \"created_time\": \"2021-09-18T16:53:18.788978+04:30\",\n        \"updated_time\": \"2021-09-19T18:28:39.244891+04:30\"\n    },\n    \"name\": \"peyman hassani\",\n    \"bio\": \"I don't know, doge to the moon\",\n    \"followers\": \"http://localhost:8000/profiles/1/followers/\",\n    \"followings\": \"http://localhost:8000/profiles/1/followings/\",\n    \"followers_count\": 2,\n    \"followings_count\": 2,\n    \"following_status\": false,\n    \"created_time\": \"2021-09-18T16:53:18.806226+04:30\",\n    \"updated_time\": \"2021-09-19T18:28:39.240499+04:30\"\n}"
 						}
 					]
 				},
@@ -3028,7 +3028,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sun, 19 Sep 2021 13:07:19 GMT"
+									"value": "Mon, 20 Sep 2021 11:35:01 GMT"
 								},
 								{
 									"key": "Server",
@@ -3052,7 +3052,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "634"
+									"value": "731"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -3064,7 +3064,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"count\": 2,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/posts/5/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 2,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"another great day with my buddies\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:25:17.627144+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/4/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 2,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"what a great day\",\n            \"image\": \"http://localhost:8000/media/posts/images/photo_2020-12-03_14-19-45.jpg\",\n            \"created_time\": \"2021-09-18T16:58:50.986955+04:30\"\n        }\n    ]\n}"
+							"body": "{\n    \"count\": 2,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/posts/8/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes\": \"http://localhost:8000/posts/8/likes/\",\n            \"likes_count\": 0,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"in Tom Brady we believe\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:40:56.446483+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/4/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes\": \"http://localhost:8000/posts/4/likes/\",\n            \"likes_count\": 3,\n            \"liked_status\": true,\n            \"repost_status\": false,\n            \"content\": \"hold up, Luffy is now the king\",\n            \"image\": \"http://localhost:8000/media/posts/images/photo_2020-12-03_14-19-45.jpg\",\n            \"created_time\": \"2021-09-18T16:58:50.986955+04:30\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -3234,7 +3234,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sun, 19 Sep 2021 13:16:07 GMT"
+									"value": "Mon, 20 Sep 2021 11:35:38 GMT"
 								},
 								{
 									"key": "Server",
@@ -3254,7 +3254,7 @@
 								},
 								{
 									"key": "Expires",
-									"value": "Sun, 19 Sep 2021 13:23:37 GMT"
+									"value": "Mon, 20 Sep 2021 11:45:38 GMT"
 								},
 								{
 									"key": "Cache-Control",
@@ -3266,7 +3266,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1971"
+									"value": "1653"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -3278,7 +3278,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"count\": 7,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/posts/8/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 0,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"in Tom Brady we believe\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:40:56.446483+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/7/\",\n            \"parent\": \"http://localhost:8000/posts/4/\",\n            \"user\": \"http://localhost:8000/profiles/4/\",\n            \"likes_count\": 2,\n            \"liked_status\": false,\n            \"repost_status\": true,\n            \"content\": \"indeed it its\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:35:24.149959+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/6/\",\n            \"parent\": \"http://localhost:8000/posts/5/\",\n            \"user\": \"http://localhost:8000/profiles/6/\",\n            \"likes_count\": 1,\n            \"liked_status\": false,\n            \"repost_status\": true,\n            \"content\": \"is it still going on?\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:34:28.480587+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/5/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 2,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"another great day with my buddies\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:25:17.627144+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/4/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 2,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"what a great day\",\n            \"image\": \"http://localhost:8000/media/posts/images/photo_2020-12-03_14-19-45.jpg\",\n            \"created_time\": \"2021-09-18T16:58:50.986955+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/3/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/3/\",\n            \"likes_count\": 1,\n            \"liked_status\": true,\n            \"repost_status\": false,\n            \"content\": \"how u doin' guys?\",\n            \"image\": null,\n            \"created_time\": \"2021-09-18T16:58:19.409222+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/2/\",\n            \"parent\": \"http://localhost:8000/posts/4/\",\n            \"user\": \"http://localhost:8000/profiles/2/\",\n            \"likes_count\": 1,\n            \"liked_status\": true,\n            \"repost_status\": true,\n            \"content\": \"still the best post\",\n            \"image\": null,\n            \"created_time\": \"2021-09-18T16:58:04.379701+04:30\"\n        }\n    ]\n}"
+							"body": "{\n    \"count\": 5,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/posts/8/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes\": \"http://localhost:8000/posts/8/likes/\",\n            \"likes_count\": 0,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"in Tom Brady we believe\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:40:56.446483+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/6/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/6/\",\n            \"likes\": \"http://localhost:8000/posts/6/likes/\",\n            \"likes_count\": 1,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"is it still going on?\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:34:28.480587+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/4/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes\": \"http://localhost:8000/posts/4/likes/\",\n            \"likes_count\": 3,\n            \"liked_status\": true,\n            \"repost_status\": false,\n            \"content\": \"hold up, Luffy is now the king\",\n            \"image\": \"http://localhost:8000/media/posts/images/photo_2020-12-03_14-19-45.jpg\",\n            \"created_time\": \"2021-09-18T16:58:50.986955+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/3/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/3/\",\n            \"likes\": \"http://localhost:8000/posts/3/likes/\",\n            \"likes_count\": 1,\n            \"liked_status\": true,\n            \"repost_status\": false,\n            \"content\": \"how u doin' guys?\",\n            \"image\": null,\n            \"created_time\": \"2021-09-18T16:58:19.409222+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/2/\",\n            \"parent\": \"http://localhost:8000/posts/4/\",\n            \"user\": \"http://localhost:8000/profiles/2/\",\n            \"likes\": \"http://localhost:8000/posts/2/likes/\",\n            \"likes_count\": 1,\n            \"liked_status\": true,\n            \"repost_status\": true,\n            \"content\": \"still the best post\",\n            \"image\": null,\n            \"created_time\": \"2021-09-18T16:58:04.379701+04:30\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -3334,7 +3334,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sun, 19 Sep 2021 13:17:39 GMT"
+									"value": "Mon, 20 Sep 2021 11:36:00 GMT"
 								},
 								{
 									"key": "Server",
@@ -3358,7 +3358,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1168"
+									"value": "1357"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -3370,7 +3370,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"count\": 4,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/posts/8/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 0,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"in Tom Brady we believe\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:40:56.446483+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/5/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 2,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"another great day with my buddies\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:25:17.627144+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/4/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes_count\": 2,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"what a great day\",\n            \"image\": \"http://localhost:8000/media/posts/images/photo_2020-12-03_14-19-45.jpg\",\n            \"created_time\": \"2021-09-18T16:58:50.986955+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/2/\",\n            \"parent\": \"http://localhost:8000/posts/4/\",\n            \"user\": \"http://localhost:8000/profiles/2/\",\n            \"likes_count\": 1,\n            \"liked_status\": true,\n            \"repost_status\": true,\n            \"content\": \"still the best post\",\n            \"image\": null,\n            \"created_time\": \"2021-09-18T16:58:04.379701+04:30\"\n        }\n    ]\n}"
+							"body": "{\n    \"count\": 4,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"url\": \"http://localhost:8000/posts/8/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes\": \"http://localhost:8000/posts/8/likes/\",\n            \"likes_count\": 0,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"in Tom Brady we believe\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:40:56.446483+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/6/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/6/\",\n            \"likes\": \"http://localhost:8000/posts/6/likes/\",\n            \"likes_count\": 1,\n            \"liked_status\": false,\n            \"repost_status\": false,\n            \"content\": \"is it still going on?\",\n            \"image\": null,\n            \"created_time\": \"2021-09-19T17:34:28.480587+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/4/\",\n            \"parent\": null,\n            \"user\": \"http://localhost:8000/profiles/1/\",\n            \"likes\": \"http://localhost:8000/posts/4/likes/\",\n            \"likes_count\": 3,\n            \"liked_status\": true,\n            \"repost_status\": false,\n            \"content\": \"hold up, Luffy is now the king\",\n            \"image\": \"http://localhost:8000/media/posts/images/photo_2020-12-03_14-19-45.jpg\",\n            \"created_time\": \"2021-09-18T16:58:50.986955+04:30\"\n        },\n        {\n            \"url\": \"http://localhost:8000/posts/2/\",\n            \"parent\": \"http://localhost:8000/posts/4/\",\n            \"user\": \"http://localhost:8000/profiles/2/\",\n            \"likes\": \"http://localhost:8000/posts/2/likes/\",\n            \"likes_count\": 1,\n            \"liked_status\": true,\n            \"repost_status\": true,\n            \"content\": \"still the best post\",\n            \"image\": null,\n            \"created_time\": \"2021-09-18T16:58:04.379701+04:30\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -3437,7 +3437,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sun, 19 Sep 2021 13:20:42 GMT"
+									"value": "Mon, 20 Sep 2021 11:36:13 GMT"
 								},
 								{
 									"key": "Server",
@@ -3461,7 +3461,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "316"
+									"value": "376"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -3473,7 +3473,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"url\": \"http://localhost:8000/posts/4/\",\n    \"parent\": null,\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"likes_count\": 2,\n    \"liked_status\": false,\n    \"repost_status\": false,\n    \"content\": \"what a great day\",\n    \"image\": \"http://localhost:8000/media/posts/images/photo_2020-12-03_14-19-45.jpg\",\n    \"created_time\": \"2021-09-18T16:58:50.986955+04:30\"\n}"
+							"body": "{\n    \"url\": \"http://localhost:8000/posts/4/\",\n    \"parent\": null,\n    \"user\": \"http://localhost:8000/profiles/1/\",\n    \"likes\": \"http://localhost:8000/posts/4/likes/\",\n    \"likes_count\": 3,\n    \"liked_status\": true,\n    \"repost_status\": false,\n    \"content\": \"hold up, Luffy is now the king\",\n    \"image\": \"http://localhost:8000/media/posts/images/photo_2020-12-03_14-19-45.jpg\",\n    \"created_time\": \"2021-09-18T16:58:50.986955+04:30\"\n}"
 						}
 					]
 				},
@@ -7767,7 +7767,7 @@
 		},
 		{
 			"key": "access_token",
-			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMyMTM3NTk3LCJqdGkiOiI5ZjNhMGFmMTdhYzE0NjcwOTk0NWQwYzRkZDQ2NTI0NCIsInVzZXJfaWQiOjF9.iNE-KN5Bb9JNR83ZIP7h_WNaKmu1sAPf9K5wgtipOBg"
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMyMTQwMDUyLCJqdGkiOiIxNGEwOWNlMDZiZjY0NDRkODU0MmI2MzI5MGMyMWFiNyIsInVzZXJfaWQiOjF9.gzVGkVxQj4nMblxCabDo3ymoKdcdcz_SW86qaHhZaL0"
 		}
 	]
 }

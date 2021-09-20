@@ -31,12 +31,15 @@ class ProfileSerializer(serializers.ModelSerializer):
     followers_count = serializers.SerializerMethodField(read_only=True)
     followings_count = serializers.SerializerMethodField(read_only=True)
     following_status = serializers.SerializerMethodField(read_only=True)
+    followers = serializers.SerializerMethodField(read_only=True)
+    followings = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = Profile
         fields = [
-            'user', 'name', 'bio', 'followers_count', 'followings_count',
-            'following_status', 'created_time', 'updated_time'
+            'user', 'name', 'bio', 'followers', 'followings',
+            'followers_count', 'followings_count', 'following_status',
+            'created_time', 'updated_time'
         ]
 
     def get_followers_count(self, obj):
@@ -48,6 +51,18 @@ class ProfileSerializer(serializers.ModelSerializer):
     def get_following_status(self, obj):
         user = self.context.get('request').user
         return user in obj.followers.all()
+
+    def get_followers(self, obj):
+        request = self.context.get('request')
+        return reverse(viewname='profiles:follower_relation_list',
+                       args=[obj.id],
+                       request=request)
+
+    def get_followings(self, obj):
+        request = self.context.get('request')
+        return reverse(viewname='profiles:following_relation_list',
+                       args=[obj.id],
+                       request=request)
 
     def update(self, instance, validated_data):
         user_data = validated_data.pop('user')
