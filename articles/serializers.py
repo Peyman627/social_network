@@ -97,6 +97,9 @@ class ArticleImageSerializer(serializers.ModelSerializer):
 
 
 class ArticleTagSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name='articles:tag_detail',
+                                               lookup_url_kwarg='tag_id')
+
     class Meta:
         model = ArticleTag
-        fields = ['name']
+        fields = ['url', 'name']

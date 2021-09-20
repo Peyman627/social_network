@@ -118,3 +118,4 @@ class ArticleTagDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = ArticleTag.objects.all()
     serializer_class = ArticleTagSerializer
     permission_classes = [IsAdminUserOrReadOnly]
+    lookup_url_kwarg = 'tag_id'
