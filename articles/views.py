@@ -62,3 +62,25 @@ class ArticleImageDetailView(generics.RetrieveUpdateDestroyAPIView):
         article_id = self.kwargs.get('article_id')
         image_id = self.kwargs.get('image_id')
         return ArticleImage.objects.get(id=image_id, article=article_id)
+
+
+class ArticleVoteListView(generics.ListCreateAPIView):
+    queryset = ArticleVote.objects.all()
+    serializer_class = ArticleVoteSerializer
+    permission_classes = []
+
+    def get_queryset(self):
+        article_id = self.kwargs.get('article_id')
+        return ArticleVote.objects.filter(
+            article=article_id).order_by('-created_time')
+
+
+class ArticleVoteDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ArticleVote.objects.all()
+    serializer_class = ArticleVoteSerializer
+    permission_classes = []
+
+    def get_object(self):
+        article_id = self.kwargs.get('article_id')
+        vote_id = self.kwargs.get('vote_id')
+        return ArticleVote.objects.get(id=vote_id, article=article_id)

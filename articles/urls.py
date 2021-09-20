@@ -20,4 +20,10 @@ urlpatterns = [
     path('<int:article_id>/images/<int:image_id>/',
          views.ArticleImageDetailView.as_view(),
          name='image_detail'),
+    path('<int:article_id>/votes/',
+         views.ArticleVoteListView.as_view(),
+         name='vote_list'),
+    path('<int:article_id>/votes/<int:vote_id>/',
+         views.ArticleVoteDetailView.as_view(),
+         name='vote_detail'),
 ]
