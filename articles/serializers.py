@@ -2,13 +2,24 @@ from rest_framework import serializers
 
 from .models import (Article, ArticleComment, ArticleTag, ArticleVote,
                      ArticleImage)
+from profiles.serializer_fields import UserHyperlinkedRelatedField
 
 
-class ArticleSerializer(serializers.ModelSerializer):
+class ArticleSerializer(serializers.HyperlinkedModelSerializer):
+    url = serializers.HyperlinkedIdentityField(
+        view_name='articles:article_detail',
+        lookup_url_kwarg='article_id',
+    )
+    user = UserHyperlinkedRelatedField(read_only=True)
+    tags = serializers.SlugRelatedField(many=True,
+                                        queryset=ArticleTag.objects.all(),
+                                        slug_field='name')
+
     class Meta:
         model = Article
         fields = [
-            'user', 'title', 'content', 'tags', 'created_time', 'updated_time'
+            'url', 'user', 'title', 'content', 'tags', 'created_time',
+            'updated_time'
         ]
 
 
