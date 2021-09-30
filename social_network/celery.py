@@ -3,19 +3,12 @@ import os
 from celery import Celery
 from celery.schedules import crontab
 
-# from users import tasks
-
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'social_network.settings')
 
 app = Celery('social_network')
 
 app.config_from_object('django.conf:settings', namespace='CELERY')
 app.autodiscover_tasks()
-
-
-@app.task(name='myman')
-def test(arg):
-    print(arg)
 
 
 @app.task(bind=True)
