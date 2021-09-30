@@ -20,6 +20,7 @@ from .serializers import (RegisterSerializer, EmailVerificationSerializer,
                           PhoneTokenValidateSerializer)
 from .utils import Util
 from .models import PhoneToken
+from .tasks import send_verify_email_task
 
 User = get_user_model()
 
@@ -46,7 +47,7 @@ class RegisterView(generics.GenericAPIView):
             'to': user.email
         }
 
-        Util.send_email(email_data)
+        send_verify_email_task.delay(email_data)
 
         return Response(
             {

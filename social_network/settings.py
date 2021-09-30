@@ -185,3 +185,8 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 PHONE_LOGIN_DEBUG = config('PHONE_LOGIN_DEBUG', cast=bool)
 KAVENEGAR_API_KEY = config('KAVENEGAR_API_KEY')
+
+
+# Celery stuff
+
+CELERY_TIMEZONE = "Asia/Tehran"
