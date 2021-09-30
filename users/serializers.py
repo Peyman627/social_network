@@ -11,6 +11,7 @@ from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 
 from .utils import Util
 from .models import PhoneToken
+from .tasks import send_password_reset_email_task
 
 User = get_user_model()
 
@@ -130,7 +131,7 @@ class PasswordResetSerializer(serializers.Serializer):
                 'to': user.email
             }
 
-            Util.send_email(email_data)
+            send_password_reset_email_task.delay(email_data)
 
         return attrs
 
