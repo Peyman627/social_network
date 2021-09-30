@@ -2,6 +2,7 @@ from celery import shared_task
 from celery.utils.log import get_task_logger
 
 from .utils import Util
+from .models import PhoneToken
 
 logger = get_task_logger(__name__)
 
@@ -22,3 +23,9 @@ def send_password_reset_email_task(email_data):
 def send_otp_sms_task(sms_data):
     logger.info('sent otp sms')
     Util.send_sms(sms_data)
+
+
+@shared_task(name='delete_used_phone_tokens_task')
+def delete_used_phone_tokens_task():
+    logger.info('deleted used phone tokens')
+    PhoneToken.objects.filter(used=True).delete()

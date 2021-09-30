@@ -10,8 +10,7 @@ from django.utils.timezone import make_aware
 from rest_framework_simplejwt.tokens import RefreshToken
 from phonenumber_field.modelfields import PhoneNumberField
 
-from .utils import Util
-from .tasks import send_otp_sms_task
+# from . import tasks
 
 
 class UserManager(BaseUserManager):
@@ -112,13 +111,7 @@ class PhoneToken(models.Model):
             phone_token = PhoneToken(phone=number, otp=otp)
             phone_token.save()
 
-            sms_data = {
-                'receptor': number,
-                'message': f'Your code for login: {otp}'
-            }
-            send_otp_sms_task.delay(sms_data)
-
-            return phone_token
+            return phone_token, otp
 
         return None
 

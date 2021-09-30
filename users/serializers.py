@@ -9,9 +9,8 @@ from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.reverse import reverse
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 
-from .utils import Util
 from .models import PhoneToken
-from .tasks import send_password_reset_email_task
+from . import tasks
 
 User = get_user_model()
 
@@ -131,7 +130,7 @@ class PasswordResetSerializer(serializers.Serializer):
                 'to': user.email
             }
 
-            send_password_reset_email_task.delay(email_data)
+            tasks.send_password_reset_email_task.apply_async((email_data, ))
 
         return attrs
 

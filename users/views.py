@@ -18,9 +18,8 @@ from .serializers import (RegisterSerializer, EmailVerificationSerializer,
                           SetNewPasswordSerializer, LogoutSerializer,
                           PhoneTokenCreateSerializer,
                           PhoneTokenValidateSerializer)
-from .utils import Util
 from .models import PhoneToken
-from .tasks import send_verify_email_task
+from . import tasks
 
 User = get_user_model()
 
@@ -47,7 +46,7 @@ class RegisterView(generics.GenericAPIView):
             'to': user.email
         }
 
-        send_verify_email_task.delay(email_data)
+        tasks.send_verify_email_task.apply_async((email_data,))
 
         return Response(
             {
@@ -169,8 +168,14 @@ class GenerateOTPView(generics.CreateAPIView):
         serializer = self.serializer_class(data=request.data,
                                            context={'request': request})
         if serializer.is_valid():
-            token = PhoneToken.create_otp_for_number(
-                number=request.data.get('phone'))
+            number = request.data.get('phone')
+            token, otp = PhoneToken.create_otp_for_number(number)
+
+            sms_data = {
+                'receptor': number,
+                'message': f'Your code for login: {otp}'
+            }
+            tasks.send_otp_sms_task.apply_async((sms_data,))
 
             if token:
                 phone_token = self.serializer_class(
@@ -184,8 +189,8 @@ class GenerateOTPView(generics.CreateAPIView):
             return Response(
                 {
                     'reason':
-                    "you can not have more than {n} attempts per day, please try again tomorrow"
-                    .format(n=getattr(settings, 'PHONE_LOGIN_ATTEMPTS', 10))
+                        "you can not have more than {n} attempts per day, please try again tomorrow".format(
+                            n=getattr(settings, 'PHONE_LOGIN_ATTEMPTS', 10))
                 },
                 status=status.HTTP_403_FORBIDDEN)
         return Response({'reason': serializer.errors},
