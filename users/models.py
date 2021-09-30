@@ -11,6 +11,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from phonenumber_field.modelfields import PhoneNumberField
 
 from .utils import Util
+from .tasks import send_otp_sms_task
 
 
 class UserManager(BaseUserManager):
@@ -115,7 +116,7 @@ class PhoneToken(models.Model):
                 'receptor': number,
                 'message': f'Your code for login: {otp}'
             }
-            Util.send_sms(sms_data)
+            send_otp_sms_task.delay(sms_data)
 
             return phone_token
 
