@@ -19,7 +19,7 @@ from .serializers import (RegisterSerializer, EmailVerificationSerializer,
                           PhoneTokenCreateSerializer,
                           PhoneTokenValidateSerializer)
 from .models import PhoneToken
-from . import tasks
+from .tasks import send_verify_email_task, send_otp_sms_task
 
 User = get_user_model()
 
@@ -31,9 +31,8 @@ class RegisterView(generics.GenericAPIView):
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.save()
+        user = serializer.save()
 
-        user = User.objects.get(email=serializer.data['email'])
         token = RefreshToken.for_user(user).access_token
 
         address = reverse('users:email_verify', request=request)
@@ -43,10 +42,10 @@ class RegisterView(generics.GenericAPIView):
         email_data = {
             'subject': 'Verify your email',
             'body': email_body,
-            'to': user.email
+            'to': [user.email]
         }
 
-        tasks.send_verify_email_task.apply_async((email_data,))
+        send_verify_email_task.apply_async((email_data,))
 
         return Response(
             {
@@ -175,7 +174,7 @@ class GenerateOTPView(generics.CreateAPIView):
                 'receptor': number,
                 'message': f'Your code for login: {otp}'
             }
-            tasks.send_otp_sms_task.apply_async((sms_data,))
+            send_otp_sms_task.apply_async((sms_data,))
 
             if token:
                 phone_token = self.serializer_class(

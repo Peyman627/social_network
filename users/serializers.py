@@ -10,7 +10,7 @@ from rest_framework.reverse import reverse
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 
 from .models import PhoneToken
-from . import tasks
+from .tasks import send_password_reset_email_task
 
 User = get_user_model()
 
@@ -32,9 +32,6 @@ class RegisterSerializer(serializers.ModelSerializer):
                 'The username should only contain alphanumeric characters')
 
         return attrs
-
-    def create(self, validated_data):
-        return User.objects.create_user(**validated_data)
 
 
 class EmailVerificationSerializer(serializers.ModelSerializer):
@@ -127,10 +124,10 @@ class PasswordResetSerializer(serializers.Serializer):
             email_data = {
                 'subject': 'Reset your password',
                 'body': email_body,
-                'to': user.email
+                'to': [user.email]
             }
 
-            tasks.send_password_reset_email_task.apply_async((email_data, ))
+            send_password_reset_email_task.apply_async((email_data, ))
 
         return attrs
 

@@ -7,10 +7,7 @@ from kavenegar import KavenegarAPI, APIException, HTTPException
 class Util:
     @staticmethod
     def send_email(data):
-        subject = data['subject']
-        body = data['body']
-        to = data['to']
-        email = EmailMessage(subject=subject, body=body, to=[to])
+        email = EmailMessage(**data)
         email.send()
 
     @staticmethod
@@ -32,4 +29,4 @@ class Util:
                 'Service temporarily unavailable, try again later.', code=503)
 
         except HTTPException:
-            raise RestAPIException('Try again, an error occured', code=400)
+            raise RestAPIException('Try again, an error occurred', code=400)
