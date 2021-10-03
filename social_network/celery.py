@@ -5,7 +5,9 @@ from celery.schedules import crontab
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'social_network.settings')
 
-app = Celery('social_network')
+BROKER_URL = 'redis://localhost:6379/0'
+BACKEND_URL = 'redis://localhost:6379/1'
+app = Celery('social_network', broker=BROKER_URL, backend=BACKEND_URL)
 
 app.config_from_object('django.conf:settings', namespace='CELERY')
 app.autodiscover_tasks()
@@ -17,9 +19,9 @@ def debug_task(self):
 
 
 app.conf.beat_schedule = {
-    'delete_used_phone_tokens_every_hour': {
-        'task': 'delete_used_phone_tokens_task',
-        'schedule': crontab(hour='*/3'),
+    'delete_used_phone_tokens': {
+        'task': 'users.tasks.delete_used_phone_tokens_task',
+        'schedule': crontab(minute=0, hour='*/3'),
         'args': (),
     }
 }

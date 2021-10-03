@@ -25,7 +25,7 @@ def send_otp_sms_task(sms_data):
     Util.send_sms(sms_data)
 
 
-@shared_task(name='delete_used_phone_tokens_task')
+@shared_task(name='users.tasks.delete_used_phone_tokens_task')
 def delete_used_phone_tokens_task():
     logger.info('deleted used phone tokens')
     PhoneToken.objects.filter(used=True).delete()
